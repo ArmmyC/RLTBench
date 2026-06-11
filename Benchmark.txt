@@ -1,0 +1,195 @@
+You are working in a repo where Qwen is already available through a vLLM OpenAI-compatible endpoint running on LANTA.
+
+Goal:
+Build a reproducible benchmark harness to evaluate Qwen on normal RTL/Verilog generation benchmarks, starting with VerilogEval v2.
+
+Important:
+- Do not optimize for RFID yet.
+- Do not use the low-power RFID system prompt yet.
+- This first benchmark is for normal RTL generation ability: syntax correctness, functional correctness, and pass@k.
+- Keep the implementation simple, reproducible, and easy to extend later to RTLLM and PPA benchmarks.
+
+Assumptions:
+- Qwen is served through an OpenAI-compatible API.
+- The endpoint, model name, and API key should come from environment variables.
+- Do not hardcode secrets.
+- Use Python for the benchmark runner.
+- Use iverilog first for VerilogEval compatibility.
+- Add optional Verilator linting if easy, but iverilog should be the first working path.
+
+Environment variables:
+- QWEN_BASE_URL: OpenAI-compatible base URL, for example http://<lanta-node>:8000/v1
+- QWEN_API_KEY: API key, or dummy value if the endpoint does not require auth
+- QWEN_MODEL: model name served by vLLM, for example Qwen/Qwen3.6-27B or Qwen/Qwen3.6-35B-A3B
+- BENCHMARK_ROOT: path to the VerilogEval repository or dataset
+
+Tasks:
+
+1. Inspect the repository structure.
+   - If VerilogEval is already included, detect its location.
+   - If not included, create clear setup instructions in README.md explaining how to clone or place VerilogEval.
+   - Do not make assumptions silently. Print useful error messages.
+
+2. Create a benchmark runner:
+   File: scripts/run_qwen_verilogeval.py
+
+   Requirements:
+   - Load VerilogEval tasks from BENCHMARK_ROOT.
+   - Support both a small debug subset and full benchmark run.
+   - Call Qwen through the OpenAI-compatible API.
+   - Generate one or more samples per task.
+   - Extract Verilog/SystemVerilog code from the model response.
+   - Save raw model responses and extracted RTL.
+   - Run syntax/functional evaluation using the benchmark’s provided testbench flow if available.
+   - Record pass/fail results.
+   - Record failure category when possible:
+     - API failure
+     - empty response
+     - code extraction failure
+     - compile failure
+     - simulation failure
+     - timeout
+     - passed
+
+3. Add CLI options:
+   - --benchmark-root
+   - --model
+   - --base-url
+   - --api-key
+   - --split or --task-set if supported by VerilogEval
+   - --limit for quick testing
+   - --samples-per-task
+   - --temperature
+   - --top-p
+   - --max-tokens
+   - --timeout
+   - --output-dir
+
+4. Default generation settings:
+   - temperature 0.2
+   - top_p 0.95
+   - max_tokens 2048
+   - samples_per_task 1 for debug
+   - support samples_per_task 5 or 10 for pass@k
+
+5. Prompting:
+   Use a neutral benchmark prompt. Do not use RFID-specific or PPA-specific instructions.
+
+   System prompt:
+   "You are an expert RTL designer. Generate correct, synthesizable Verilog/SystemVerilog code that satisfies the given specification. Return only the final code unless explanation is explicitly requested."
+
+   User prompt format:
+   - Include the benchmark problem statement exactly.
+   - Include required module name and interface if provided.
+   - Tell the model not to change the module interface.
+   - Tell the model to avoid testbench code.
+   - Tell the model to output only the RTL module.
+
+6. Code extraction:
+   Implement robust extraction:
+   - Prefer fenced code blocks tagged verilog, systemverilog, sv, or plain code.
+   - If no fence exists, extract from the first "module" to the matching "endmodule".
+   - Remove markdown.
+   - Do not remove valid comments inside RTL.
+   - Save both raw and extracted outputs for debugging.
+
+7. Results format:
+   Save:
+   - results.jsonl: one row per sample
+   - summary.json
+   - summary.csv
+
+   Each JSONL row should include:
+   - benchmark
+   - task_id
+   - sample_id
+   - model
+   - temperature
+   - top_p
+   - max_tokens
+   - prompt_hash
+   - raw_response_path
+   - extracted_rtl_path
+   - compile_pass
+   - sim_pass
+   - final_pass
+   - failure_category
+   - error_log_path
+   - latency_seconds
+   - token usage if available
+
+8. Metrics:
+   Implement:
+   - syntax pass rate
+   - functional pass rate
+   - pass@1
+   - pass@k when samples_per_task > 1
+   - failure category counts
+
+   Use the standard unbiased pass@k estimator:
+   pass@k = average over tasks of:
+   if n - c < k then 1 else 1 - comb(n - c, k) / comb(n, k)
+   where:
+   n = number of generated samples for that task
+   c = number of passing samples for that task
+
+9. Add a README section:
+   Explain how to run a smoke test:
+   - 3 tasks
+   - 1 sample per task
+   - temperature 0.2
+
+   Explain how to run a larger benchmark:
+   - all tasks
+   - 5 samples per task
+   - temperature 0.6
+
+   Include example commands using environment variables.
+
+10. Add a config file:
+   File: configs/qwen_verilogeval.yaml
+
+   Include:
+   - model
+   - base_url
+   - benchmark_root
+   - samples_per_task
+   - temperature
+   - top_p
+   - max_tokens
+   - timeout
+   - output_dir
+
+11. Add basic tests:
+   - Unit test code extraction from fenced code.
+   - Unit test code extraction from unfenced module text.
+   - Unit test pass@k calculation.
+   - Unit test result aggregation.
+
+12. Make the implementation robust:
+   - Continue running if one task fails.
+   - Save error logs.
+   - Print progress.
+   - Avoid overwriting previous runs unless --overwrite is provided.
+   - Create timestamped output directories.
+   - Use pathlib.
+   - Use type hints where practical.
+
+13. Final deliverables:
+   - scripts/run_qwen_verilogeval.py
+   - configs/qwen_verilogeval.yaml
+   - tests/test_extraction.py
+   - tests/test_metrics.py
+   - README.md updates
+   - example output directory structure documented
+
+14. After implementing, run:
+   - unit tests
+   - a dry-run or mock run if the real Qwen endpoint is unavailable
+   - a smoke benchmark if the endpoint and VerilogEval path are available
+
+15. At the end, summarize:
+   - what files were created
+   - how to run the benchmark
+   - what assumptions were made
+   - what still needs manual setup
