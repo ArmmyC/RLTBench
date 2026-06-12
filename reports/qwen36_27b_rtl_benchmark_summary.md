@@ -16,6 +16,7 @@ Detailed reports:
 - `reports/verilogeval_v2_qwen36_35b_a3b_baseline.md`
 - `reports/qwen36_27b_vs_qwen36_35b_a3b_verilogeval.md`
 - `reports/qwen36_27b_vs_qwen36_35b_a3b_public_benchmarks.md`
+- `reports/qwen36_35b_a3b_output_manifest.md`
 - `reports/rtllm2_qwen36_27b_baseline.md`
 - `reports/rtllm2_qwen36_35b_a3b_baseline.md`
 - `reports/protocollm_qwen36_27b_public_lint_baseline.md`

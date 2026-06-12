@@ -10,6 +10,24 @@ Comparison rule:
 - ProtocolLLM public lint is reported separately as lint-only.
 - RTL-OPT equivalence is reported separately as behavior-preserving optimization evidence.
 
+## Matched Settings Audit
+
+| Benchmark / Mode | Same benchmark? | samples_per_task | Temperature | Top-p | Max tokens | Notes |
+|---|---|---:|---:|---:|---:|---|
+| VerilogEval v2 pass@1 | yes, VerilogEval v2 `dataset_spec-to-rtl` | 1 | 0.2 | 0.95 | 2048 | qwen36-27b run predates `run_metadata.json`; settings are from the committed baseline report and run command record |
+| VerilogEval v2 pass@5 | yes, VerilogEval v2 `dataset_spec-to-rtl` | 5 | 0.6 | 0.95 | 2048 | qwen36-27b run predates `run_metadata.json`; settings are from the committed baseline report and run command record |
+| RTLLM 2.0 pass@1 | yes, RTLLM 2.0 public benchmark | 1 | 0.2 | 0.95 | 4096 | verified from both run metadata files |
+| ProtocolLLM public lint | yes, ProtocolLLM public prompts | 1 | 0.2 | 0.95 | 4096 | verified from both run metadata files; lint-only |
+| RTL-OPT lint | yes, RTL-OPT public benchmark | 1 | 0.2 | 0.95 | 4096 | lint-only |
+| RTL-OPT generic synthesis | yes, RTL-OPT public benchmark | 1 | 0.2 | 0.95 | 4096 | synthesis-only |
+| RTL-OPT equivalence | yes, RTL-OPT public benchmark | 1 | 0.2 | 0.95 | 4096 | verified from both run metadata files; behavior-preserving optimization condition |
+
+The comparison below reports the two model results side by side only within the same benchmark and evaluation mode.
+
+## Output Artifact Tracking
+
+Raw output folders are preserved on Lanta and are not committed to Git because `outputs/` is intentionally gitignored by repo policy. The committed artifacts are the benchmark configs, summary reports, and this comparison report. The exact output directories are listed in the tables below and in `reports/qwen36_35b_a3b_output_manifest.md`.
+
 ## Functional RTL Generation
 
 | Benchmark | Metric | qwen36-27b | qwen36-35b-a3b | Delta |
