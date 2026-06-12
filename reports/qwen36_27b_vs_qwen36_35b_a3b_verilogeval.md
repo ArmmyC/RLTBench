@@ -1,4 +1,4 @@
-# Qwen36-27B vs Qwen36-35B-A3B VerilogEval v2 Comparison
+# Qwen36-27B vs Qwen36-35B-A3B vs Qwen3-Coder VerilogEval v2 Comparison
 
 ## Scope
 
@@ -25,18 +25,20 @@ Do not compare these numbers against lint-only ProtocolLLM or synthesis/equivale
 |---|---|---:|---:|---:|---:|
 | `qwen36-27b` | `outputs/verilogeval_v2_pass1/20260611T090440Z__verilogeval__qwen36-27b` | 156 | 0.8397 | 0.6154 | - |
 | `qwen36-35b-a3b` | `outputs/verilogeval/qwen36-35b-a3b/20260612T125618Z` | 156 | 0.7564 | 0.5705 | - |
+| `qwen3-coder-30b-a3b-instruct` | `outputs/verilogeval/qwen3-coder-30b-a3b/20260612T162441Z` | 156 | 0.8654 | 0.4808 | - |
 | `qwen36-27b` | `outputs/verilogeval_v2_pass5/20260611T091009Z__verilogeval__qwen36-27b` | 780 | 0.7962 | 0.6115 | 0.7756 |
 | `qwen36-35b-a3b` | `outputs/verilogeval/qwen36-35b-a3b/20260612T132806Z` | 780 | 0.7449 | 0.5615 | 0.7308 |
+| `qwen3-coder-30b-a3b-instruct` | `outputs/verilogeval/qwen3-coder-30b-a3b/20260612T162949Z` | 780 | 0.8628 | 0.4846 | 0.5705 |
 
 ## Deltas
 
-| Metric | qwen36-27b | qwen36-35b-a3b | Delta |
+| Metric | qwen36-27b | qwen36-35b-a3b | qwen3-coder-30b-a3b-instruct |
 |---|---:|---:|---:|
-| pass@1 syntax | 0.8397 | 0.7564 | -0.0833 |
-| pass@1 functional | 0.6154 | 0.5705 | -0.0449 |
-| pass@5 syntax | 0.7962 | 0.7449 | -0.0513 |
-| pass@5 sample functional | 0.6115 | 0.5615 | -0.0500 |
-| pass@5 task recovery | 0.7756 | 0.7308 | -0.0449 |
+| pass@1 syntax | 0.8397 | 0.7564 | 0.8654 |
+| pass@1 functional | 0.6154 | 0.5705 | 0.4808 |
+| pass@5 syntax | 0.7962 | 0.7449 | 0.8628 |
+| pass@5 sample functional | 0.6115 | 0.5615 | 0.4846 |
+| pass@5 task recovery | 0.7756 | 0.7308 | 0.5705 |
 
 ## Failure Breakdown
 
@@ -46,6 +48,7 @@ Do not compare these numbers against lint-only ProtocolLLM or synthesis/equivale
 |---|---:|---:|---:|---:|
 | `qwen36-27b` | 96 | 35 | 17 | 8 |
 | `qwen36-35b-a3b` | 89 | 29 | 26 | 12 |
+| `qwen3-coder-30b-a3b-instruct` | 75 | 60 | 20 | 1 |
 
 ### pass@5 Samples
 
@@ -53,15 +56,14 @@ Do not compare these numbers against lint-only ProtocolLLM or synthesis/equivale
 |---|---:|---:|---:|---:|
 | `qwen36-27b` | 477 | 144 | 104 | 55 |
 | `qwen36-35b-a3b` | 438 | 143 | 121 | 78 |
+| `qwen3-coder-30b-a3b-instruct` | 378 | 295 | 101 | 6 |
 
 ## Conclusion
 
-On VerilogEval v2, `qwen36-27b` is stronger than `qwen36-35b-a3b` under the matched baseline settings we have tested so far.
+On VerilogEval v2, `qwen36-27b` remains the strongest functional baseline under the matched settings tested so far.
 
-The difference is not huge, but it is consistent:
+- `qwen36-27b` has the best pass@1 functional correctness and pass@5 task recovery.
+- `qwen36-35b-a3b` remains second on functional pass@1 and pass@5.
+- `qwen3-coder-30b-a3b-instruct` has the best syntax pass rate, but lower functional correctness after simulation.
 
-- `qwen36-27b` has better pass@1 functional correctness.
-- `qwen36-27b` has better pass@5 recovery.
-- `qwen36-35b-a3b` shows more extraction and compile failures, which lowers syntax pass rate.
-
-Recommended next comparison step: run RTLLM 2.0 pass@1 for `qwen36-35b-a3b` with the same settings as the existing `qwen36-27b` RTLLM run. That will show whether the VerilogEval gap generalizes to a second functional RTL benchmark.
+Recommended next comparison step: run the rest of the public benchmark sequence for `qwen3-coder-30b-a3b-instruct` before updating the full public benchmark comparison.
