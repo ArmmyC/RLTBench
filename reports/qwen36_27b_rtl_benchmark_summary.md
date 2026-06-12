@@ -40,6 +40,8 @@ Detailed reports:
 | RTL-OPT | Verilator lint only | 40 | 40 | 0.9250 | lint-only | - | `outputs/rtlopt_lint_pass1/20260612T045332Z__rtlopt__qwen36-27b` |
 | RTL-OPT | Yosys generic synthesis | 40 | 40 | 0.9000 | synth-only | - | `outputs/rtlopt_yosys_pass1/20260612T052731Z__rtlopt__qwen36-27b` |
 | RTL-OPT | Yosys equivalence + generic cells | 40 | 40 | 0.9000 | 0.6250 | - | `outputs/rtlopt_equiv_pass1/20260612T060533Z__rtlopt__qwen36-27b` |
+| RTL-OPT (`qwen36-35b-a3b`) | Verilator lint only | 40 | 40 | 0.8500 | lint-only | - | `outputs/rtlopt/qwen36-35b-a3b/20260612T144142Z` |
+| RTL-OPT (`qwen36-35b-a3b`) | Yosys generic synthesis | 40 | 40 | 0.8750 | synth-only | - | `outputs/rtlopt/qwen36-35b-a3b/20260612T144440Z` |
 | RTL-OPT (`qwen36-35b-a3b`) | Yosys equivalence + generic cells | 40 | 40 | 0.8750 | 0.4750 | - | `outputs/rtlopt/qwen36-35b-a3b/20260612T143022Z` |
 
 ## Benchmark Confidence

@@ -1,6 +1,38 @@
-# RTL-OPT Qwen36-35B-A3B Yosys Equivalence Baseline
+# RTL-OPT Qwen36-35B-A3B Public Baselines
 
-## Run
+## Lint Run
+
+- Output: `outputs/rtlopt/qwen36-35b-a3b/20260612T144142Z`
+- Evaluation mode: Verilator lint-only
+- Tasks: 40
+- Result: 34 / 40 = 0.8500
+- Failure categories: `{"passed": 34, "compile_failure": 5, "code_extraction_failure": 1}`
+
+Detailed analyses:
+
+```text
+outputs/rtlopt/qwen36-35b-a3b/20260612T144142Z/logs/code_extraction_failure_analysis.md
+outputs/rtlopt/qwen36-35b-a3b/20260612T144142Z/logs/compile_failure_analysis.md
+```
+
+## Generic Synthesis Run
+
+- Output: `outputs/rtlopt/qwen36-35b-a3b/20260612T144440Z`
+- Evaluation mode: Yosys generic synthesis
+- Tasks: 40
+- Result: 35 / 40 = 0.8750
+- Failure categories: `{"passed": 35, "synthesis_failure": 3, "code_extraction_failure": 2}`
+- Average generated generic cell ratio vs baseline: 1.6315
+- Median generated generic cell ratio vs baseline: 1.0000
+
+Detailed analyses:
+
+```text
+outputs/rtlopt/qwen36-35b-a3b/20260612T144440Z/logs/code_extraction_failure_analysis.md
+outputs/rtlopt/qwen36-35b-a3b/20260612T144440Z/logs/synthesis_failure_analysis.md
+```
+
+## Equivalence Run
 
 - Benchmark: RTL-OPT public repository
 - Model: `qwen36-35b-a3b`
@@ -10,7 +42,7 @@
 - Tasks: 40
 - Samples per task: 1
 
-## Results
+## Equivalence Results
 
 - Syntax/synthesis pass rate before equivalence: 0.8750
 - Equivalence pass rate: 19 / 40 = 0.4750

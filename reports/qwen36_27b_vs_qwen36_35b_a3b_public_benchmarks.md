@@ -38,7 +38,8 @@ This is lint-only. It does not measure protocol functional correctness.
 
 | Metric | qwen36-27b | qwen36-35b-a3b | Delta |
 |---|---:|---:|---:|
-| RTL-OPT synthesis pass | 0.9000 | 0.8750 | -0.0250 |
+| RTL-OPT lint pass | 0.9250 | 0.8500 | -0.0750 |
+| RTL-OPT generic synthesis pass | 0.9000 | 0.8750 | -0.0250 |
 | RTL-OPT equivalence pass | 0.6250 | 0.4750 | -0.1500 |
 | Equiv-passing tasks with fewer generic cells | 9 / 25 | 6 / 19 | - |
 | Average generic cell ratio among equiv-passing tasks | 0.9124 | 0.9003 | -0.0121 |
