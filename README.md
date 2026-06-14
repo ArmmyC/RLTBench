@@ -147,4 +147,19 @@ See:
 - `docs/baseline_v0.1.md` for registry maintenance and generated artifacts.
 - `docs/lanta_single_model_workflow.md` for the serving/benchmark ownership boundary.
 
+## Baseline v0.2 Per-Task Failure Matrix
+
+Baseline v0.2 adds a lightweight, commit-safe per-task layer without changing the frozen v0.1 run selection. Generate sanitized artifacts first, then build the v0.2 matrix and dashboard:
+
+```bash
+python scripts/export_per_task_results.py --registry runs/index.yaml --baseline baseline_v0_1 --output-dir artifacts/baseline_v0.2
+python scripts/analyze_cross_model_failures.py --registry runs/index.yaml --baseline baseline_v0_1 --per-task-artifacts artifacts/baseline_v0.2/per_task_results.jsonl --output-md reports/baseline_v0.2_failure_matrix.md --output-csv reports/baseline_v0.2_failure_matrix.csv
+python scripts/build_dashboard.py --registry runs/index.yaml --baseline baseline_v0_1
+python -m pytest
+```
+
+Analysis uses accessible live `results.jsonl` first, sanitized artifacts second, and registered summaries last. Pass `--prefer-artifacts` to the analysis or dashboard command for a portable artifact-only view. The exporter never includes prompts, model responses, RTL, error-log contents, credentials, or paths to those raw artifacts.
+
+See `docs/baseline_v0.2_per_task_failure_matrix.md` for the schema, source precedence, and limitations.
+
 Model serving, swapping, SSH/Slurm orchestration, OpenWebUI, and LiteLLM belong to the separate `Lanta-LLM-Hosting` repository, not this benchmark repository.

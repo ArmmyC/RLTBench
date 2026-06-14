@@ -51,6 +51,27 @@ def render_dashboard(comparison: dict[str, Any], failure: dict[str, Any]) -> str
         "<tr><th>" + html.escape(str(row[0])) + "</th>" + "".join(f"<td>{value}</td>" for value in row[1:]) + "</tr>"
         for row in summary_counts
     )
+    analysis = failure.get("analysis", {})
+    def items(values: list[str], empty: str = "None detected in available data.") -> str:
+        return "<ul>" + "".join(f"<li>{html.escape(value)}</li>" for value in values) + "</ul>" if values else f"<p>{html.escape(empty)}</p>"
+    unique_values = [
+        f"{task}: {model}"
+        for model, tasks in sorted(analysis.get("unique_by_model", {}).items())
+        for task in tasks
+    ]
+    hardest_values = [
+        f"{item['task']}: {item['failed_models']}/{item['models_compared']} models failed"
+        for item in analysis.get("hardest_tasks", [])[:25]
+    ]
+    coverage_rows = "".join(
+        f"<tr><td>{html.escape(item['benchmark'])}</td><td>{html.escape(item['mode'])}</td><td>{html.escape(item['model'])}</td><td>{html.escape(item['source'])}</td><td>{item['rows']}</td></tr>"
+        for item in failure["coverage"]
+    )
+    per_task_html = ""
+    if failure["rows"]:
+        per_task_html = f"""<h3>Per-task coverage</h3><div class="table-wrap"><table><thead><tr><th>Benchmark</th><th>Mode</th><th>Model</th><th>Source</th><th>Rows</th></tr></thead><tbody>{coverage_rows}</tbody></table></div>
+<div class="analysis-grid"><div><h3>Failed by all models</h3>{items(analysis.get('failed_all', []))}</div><div><h3>Solved by all models</h3>{items(analysis.get('solved_all', []))}</div><div><h3>Unique solves</h3>{items(unique_values)}</div><div><h3>Pass@5 recovered</h3>{items(analysis.get('pass5_recovered', []), 'No recovery detected.')}</div></div>
+<h3>Hardest tasks</h3>{items(hardest_values)}"""
     manifests = sorted({run.get("manifest_path") for run in comparison["runs"] if run.get("manifest_path")})
     manifest_links = "".join(f'<li><a href="../{html.escape(path)}">{html.escape(path)}</a></li>' for path in manifests)
     embedded = json.dumps({"comparison": comparison, "failure": failure}, sort_keys=True).replace("</", "<\\/")
@@ -64,8 +85,8 @@ header,main{{max-width:1200px;margin:auto}} header{{padding:48px 24px 24px}} h1{
 .subtitle{{color:var(--muted);max-width:760px}} main{{padding:0 24px 56px}} .cards{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}}
 .card,section{{background:white;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 6px 22px #172b4d0d}} .card b{{display:block;font-size:1.2rem;margin-top:4px}}
 section{{margin:18px 0}} .table-wrap{{overflow-x:auto}} table{{border-collapse:collapse;width:100%;min-width:760px}} th,td{{border-bottom:1px solid var(--line);padding:10px;text-align:right;white-space:nowrap}} th:first-child{{text-align:left}} thead{{background:var(--pale)}}
-.note{{background:var(--warn);padding:10px 12px;border-radius:8px}} a{{color:var(--blue);overflow-wrap:anywhere}} footer{{color:var(--muted);padding:20px 0}}
-@media(max-width:760px){{.cards{{grid-template-columns:1fr}} header{{padding-top:28px}} main,header{{padding-left:14px;padding-right:14px}}}}
+.note{{background:var(--warn);padding:10px 12px;border-radius:8px}} .analysis-grid{{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}} a{{color:var(--blue);overflow-wrap:anywhere}} footer{{color:var(--muted);padding:20px 0}}
+@media(max-width:760px){{.cards,.analysis-grid{{grid-template-columns:1fr}} header{{padding-top:28px}} main,header{{padding-left:14px;padding-right:14px}}}}
 </style></head><body>
 <header><h1>RTLBench Baseline v0.1</h1><p class="subtitle">Five-model public RTL benchmark baseline. Functional simulation, lint-only, synthesis-only, and equivalence evidence are kept separate.</p></header>
 <main><div class="cards">
@@ -76,8 +97,8 @@ section{{margin:18px 0}} .table-wrap{{overflow-x:auto}} table{{border-collapse:c
 <div class="card">Best RTL-OPT equivalence<b>{html.escape(_best(comparison,'rtlopt_behavior_preserving_optimization','equivalence_pass_rate'))}</b></div>
 <div class="card">Registered runs<b>{len(comparison['runs'])}</b></div></div>
 {"".join(table_html)}
-<section><h2>Failure Analysis</h2><p>{html.escape(failure_message)}</p><p>Warnings: {len(failure['warnings'])}</p><h3>Registered summary-level failure counts</h3><div class="table-wrap"><table><thead><tr><th>Model</th>{failure_headers}</tr></thead><tbody>{failure_rows}</tbody></table></div></section>
-<section><h2>Artifacts</h2><ul><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.md">Comparison Markdown</a></li><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.json">Comparison JSON</a></li><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.csv">Comparison CSV</a></li><li><a href="../reports/baseline_v0.1_failure_matrix.md">Failure Matrix</a></li>{manifest_links}</ul></section>
+<section><h2>Failure Analysis</h2><p>{html.escape(failure_message)}</p><p>Warnings: {len(failure['warnings'])}</p><h3>Registered summary-level failure counts</h3><div class="table-wrap"><table><thead><tr><th>Model</th>{failure_headers}</tr></thead><tbody>{failure_rows}</tbody></table></div>{per_task_html}</section>
+<section><h2>Artifacts</h2><ul><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.md">Comparison Markdown</a></li><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.json">Comparison JSON</a></li><li><a href="../reports/baseline_v0.1_public_rtl_benchmarks.csv">Comparison CSV</a></li><li><a href="../reports/baseline_v0.1_failure_matrix.md">Baseline v0.1 Failure Matrix</a></li><li><a href="../reports/baseline_v0.2_failure_matrix.md">Baseline v0.2 Failure Matrix</a></li><li><a href="../artifacts/baseline_v0.2/per_task_results.jsonl">Sanitized Per-Task JSONL</a></li><li><a href="../artifacts/baseline_v0.2/per_task_results.csv">Sanitized Per-Task CSV</a></li>{manifest_links}</ul></section>
 <footer>Generated from <code>runs/index.yaml</code>. Manual summary fallbacks are explicitly identified in the embedded source data.</footer>
 </main><script id="baseline-data" type="application/json">{embedded}</script></body></html>
 """
