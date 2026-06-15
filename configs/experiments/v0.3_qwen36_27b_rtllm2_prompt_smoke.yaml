@@ -1,0 +1,28 @@
+benchmark:
+  name: rtllm2
+  root: benchmarks/openllm-rtl
+  split: null
+
+model:
+  preset: qwen36-27b
+  base_url: null
+  request_timeout: 300
+  retries: 2
+
+prompt:
+  profile: neutral_baseline
+
+generation:
+  temperature: 0.2
+  top_p: 0.95
+  max_tokens: 4096
+
+evaluation:
+  executable: iverilog
+  evaluation_timeout: 60
+
+run:
+  samples_per_task: 1
+  workers: 1
+  limit: 3
+  output_dir: outputs/experiments/v0.3_prompt_profiles/rtllm2/neutral_baseline

@@ -7,6 +7,8 @@ from typing import Any
 
 import yaml
 
+from rtlbench.prompt_profiles import find_config_file, resolve_prompt_profile
+
 
 @dataclass(frozen=True)
 class RunConfig:
@@ -30,6 +32,8 @@ class RunConfig:
     iverilog: str
     evaluator_type: str | None = None
     extra_body: dict[str, Any] = field(default_factory=dict)
+    prompt_profile: str | None = None
+    system_prompt: str | None = None
 
 
 def load_config(path: Path, overrides: dict[str, Any] | None = None) -> RunConfig:
@@ -40,6 +44,7 @@ def load_config(path: Path, overrides: dict[str, Any] | None = None) -> RunConfi
     model_preset = overrides.get("model_preset") or model.get("preset")
     preset_model = _load_model_preset(path, str(model_preset)) if model_preset else {}
     generation = data.get("generation", {})
+    prompt = data.get("prompt", {})
     evaluation = data.get("evaluation", {})
     run = data.get("run", {})
 
@@ -56,6 +61,9 @@ def load_config(path: Path, overrides: dict[str, Any] | None = None) -> RunConfi
     root = value("root", None, benchmark) or os.getenv("BENCHMARK_ROOT")
     if not base_url or not model_name or not root:
         raise ValueError("model base_url/name and benchmark root are required via YAML, CLI, or environment")
+
+    prompt_profile = value("prompt_profile", prompt.get("profile"), prompt)
+    system_prompt = resolve_prompt_profile(path, str(prompt_profile)) if prompt_profile else None
 
     config = RunConfig(
         benchmark_name=str(value("benchmark", benchmark.get("name", "verilogeval"), benchmark)),
@@ -78,6 +86,8 @@ def load_config(path: Path, overrides: dict[str, Any] | None = None) -> RunConfi
         iverilog=str(value("executable", "iverilog", evaluation)),
         evaluator_type=value("type", None, evaluation),
         extra_body={**dict(preset_model.get("extra_body") or {}), **dict(model.get("extra_body") or {})},
+        prompt_profile=str(prompt_profile) if prompt_profile else None,
+        system_prompt=system_prompt,
     )
     if config.samples_per_task < 1:
         raise ValueError("samples_per_task must be at least 1")
@@ -93,9 +103,10 @@ def _optional_int(value: Any) -> int | None:
 
 
 def _load_model_preset(config_path: Path, preset: str) -> dict[str, Any]:
-    models_path = config_path.parent / "models.yaml"
-    if not models_path.is_file():
-        raise FileNotFoundError(f"Model preset {preset!r} requested, but {models_path} does not exist")
+    models_path = find_config_file(config_path, "models.yaml")
+    if models_path is None:
+        expected = config_path.parent / "models.yaml"
+        raise FileNotFoundError(f"Model preset {preset!r} requested, but {expected} does not exist")
     data = yaml.safe_load(models_path.read_text(encoding="utf-8")) or {}
     models = data.get("models", data)
     if preset not in models:

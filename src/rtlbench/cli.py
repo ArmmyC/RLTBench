@@ -16,6 +16,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--split")
     parser.add_argument("--model-preset")
     parser.add_argument("--model", dest="name")
+    parser.add_argument("--prompt-profile")
     parser.add_argument("--base-url")
     parser.add_argument("--api-key")
     parser.add_argument("--limit", type=int)

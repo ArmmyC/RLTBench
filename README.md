@@ -165,4 +165,21 @@ Before tagging a baseline, the consistency audit compares sanitized row and fail
 
 See `docs/baseline_v0.2_per_task_failure_matrix.md` for the schema, source precedence, and limitations.
 
+## Baseline v0.3 Prompt Experiments
+
+Baseline v0.2 is frozen. Baseline v0.3 experiments compare prompt profiles on qwen36-27b only and keep their outputs separate from the v0.1/v0.2 reports and artifacts.
+
+Run a three-task VerilogEval smoke with the strict RTL-only profile:
+
+```bash
+.conda-env/bin/rtlbench \
+  --config configs/experiments/v0.3_qwen36_27b_verilogeval_prompt_smoke.yaml \
+  --base-url "$OPENAI_BASE_URL" \
+  --prompt-profile strict_rtl_only \
+  --output-dir outputs/experiments/v0.3_prompt_profiles/verilogeval/strict_rtl_only \
+  --notes "v0.3 strict_rtl_only VerilogEval smoke"
+```
+
+Omitting `--prompt-profile` preserves the historical runner behavior. See `docs/experiments/v0.3_qwen36_27b_prompt_experiments.md` for profile definitions, matched-setting rules, and the smoke-first expansion policy.
+
 Model serving, swapping, SSH/Slurm orchestration, OpenWebUI, and LiteLLM belong to the separate `Lanta-LLM-Hosting` repository, not this benchmark repository.

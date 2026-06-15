@@ -1,0 +1,28 @@
+benchmark:
+  name: rtlopt
+  root: benchmarks/rtl-opt
+
+model:
+  preset: qwen36-27b
+  base_url: null
+  request_timeout: 300
+  retries: 2
+
+prompt:
+  profile: neutral_baseline
+
+generation:
+  temperature: 0.2
+  top_p: 0.95
+  max_tokens: 4096
+
+evaluation:
+  type: yosys_equiv
+  executable: .conda-env/bin/yosys
+  evaluation_timeout: 120
+
+run:
+  samples_per_task: 1
+  workers: 1
+  limit: 3
+  output_dir: outputs/experiments/v0.3_prompt_profiles/rtlopt/neutral_baseline

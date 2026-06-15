@@ -17,14 +17,11 @@ from rtlbench.config import RunConfig
 from rtlbench.evaluator import IcarusEvaluator, VerilatorLintEvaluator, YosysEquivalenceEvaluator, YosysPPAEvaluator
 from rtlbench.extraction import extract_all_rtl_modules, extract_rtl
 from rtlbench.metrics import aggregate_results
+from rtlbench.prompt_profiles import DEFAULT_SYSTEM_PROMPT
 from rtlbench.reporting import write_reports
 from rtlbench.types import RunPaths, SampleResult
 
-SYSTEM_PROMPT = (
-    "You are an expert RTL designer. Generate correct, synthesizable Verilog/SystemVerilog "
-    "code that satisfies the given specification. Return only the final code unless explanation "
-    "is explicitly requested."
-)
+SYSTEM_PROMPT = DEFAULT_SYSTEM_PROMPT
 
 
 def run_benchmark(config: RunConfig, *, overwrite: bool = False, notes: str = "") -> Path:
@@ -114,7 +111,7 @@ def _run_sample(config, adapter, evaluator, paths, task, sample_id: int) -> Samp
         try:
             generated = client.generate(
                 model=config.model,
-                system_prompt=SYSTEM_PROMPT,
+                system_prompt=_system_prompt(config),
                 user_prompt=prompt,
                 temperature=config.temperature,
                 top_p=config.top_p,
@@ -154,6 +151,10 @@ def _run_sample(config, adapter, evaluator, paths, task, sample_id: int) -> Samp
     result.error_log_path = str(log_path.relative_to(paths.root))
     result.evaluation_metrics = evaluated.metrics or None
     return result
+
+
+def _system_prompt(config: RunConfig) -> str:
+    return config.system_prompt or SYSTEM_PROMPT
 
 
 def _create_run_paths(base: Path, benchmark: str, model: str, overwrite: bool) -> RunPaths:
@@ -241,6 +242,7 @@ def _render_report(metadata: dict, summary: dict | None) -> str:
             f"- Benchmark: {config['benchmark_name']}",
             f"- Benchmark root: `{config['benchmark_root']}`",
             f"- Model: `{config['model']}`",
+            f"- Prompt profile: `{config.get('prompt_profile') or 'legacy_default'}`",
             f"- Base URL: `{config['base_url']}`",
             f"- Tasks: {metadata['task_count']}",
             f"- Samples per task: {config['samples_per_task']}",
