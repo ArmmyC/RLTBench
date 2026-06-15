@@ -4,41 +4,41 @@
 
 | Benchmark | Mode | Model | Run | Source | Rows |
 |---|---|---|---|---|---:|
-| verilogeval | pass1 | qwen36-27b | verilogeval_pass1_qwen36_27b | summary_only | 0 |
-| verilogeval | pass1 | qwen36-35b-a3b | verilogeval_pass1_qwen36_35b_a3b | summary_only | 0 |
-| verilogeval | pass1 | qwen3-coder-30b-a3b-instruct | verilogeval_pass1_qwen3_coder | summary_only | 0 |
-| verilogeval | pass1 | qwen25-coder-32b | verilogeval_pass1_qwen25_coder | summary_only | 0 |
-| verilogeval | pass1 | deepseek-coder-v2-lite-instruct | verilogeval_pass1_deepseek_coder | summary_only | 0 |
-| verilogeval | pass5 | qwen36-27b | verilogeval_pass5_qwen36_27b | summary_only | 0 |
-| verilogeval | pass5 | qwen36-35b-a3b | verilogeval_pass5_qwen36_35b_a3b | summary_only | 0 |
-| verilogeval | pass5 | qwen3-coder-30b-a3b-instruct | verilogeval_pass5_qwen3_coder | summary_only | 0 |
-| verilogeval | pass5 | qwen25-coder-32b | verilogeval_pass5_qwen25_coder | summary_only | 0 |
-| verilogeval | pass5 | deepseek-coder-v2-lite-instruct | verilogeval_pass5_deepseek_coder | summary_only | 0 |
-| rtllm2 | pass1 | qwen36-27b | rtllm2_pass1_qwen36_27b | summary_only | 0 |
-| rtllm2 | pass1 | qwen36-35b-a3b | rtllm2_pass1_qwen36_35b_a3b | summary_only | 0 |
-| rtllm2 | pass1 | qwen3-coder-30b-a3b-instruct | rtllm2_pass1_qwen3_coder | summary_only | 0 |
-| rtllm2 | pass1 | qwen25-coder-32b | rtllm2_pass1_qwen25_coder | summary_only | 0 |
-| rtllm2 | pass1 | deepseek-coder-v2-lite-instruct | rtllm2_pass1_deepseek_coder | summary_only | 0 |
-| protocollm | lint | qwen36-27b | protocollm_lint_qwen36_27b | summary_only | 0 |
-| protocollm | lint | qwen36-35b-a3b | protocollm_lint_qwen36_35b_a3b | summary_only | 0 |
-| protocollm | lint | qwen3-coder-30b-a3b-instruct | protocollm_lint_qwen3_coder | summary_only | 0 |
-| protocollm | lint | qwen25-coder-32b | protocollm_lint_qwen25_coder | summary_only | 0 |
-| protocollm | lint | deepseek-coder-v2-lite-instruct | protocollm_lint_deepseek_coder | summary_only | 0 |
-| rtlopt | lint | qwen36-27b | rtlopt_lint_qwen36_27b | summary_only | 0 |
-| rtlopt | lint | qwen36-35b-a3b | rtlopt_lint_qwen36_35b_a3b | summary_only | 0 |
-| rtlopt | lint | qwen3-coder-30b-a3b-instruct | rtlopt_lint_qwen3_coder | summary_only | 0 |
-| rtlopt | lint | qwen25-coder-32b | rtlopt_lint_qwen25_coder | summary_only | 0 |
-| rtlopt | lint | deepseek-coder-v2-lite-instruct | rtlopt_lint_deepseek_coder | summary_only | 0 |
-| rtlopt | synthesis | qwen36-27b | rtlopt_synthesis_qwen36_27b | summary_only | 0 |
-| rtlopt | synthesis | qwen36-35b-a3b | rtlopt_synthesis_qwen36_35b_a3b | summary_only | 0 |
-| rtlopt | synthesis | qwen3-coder-30b-a3b-instruct | rtlopt_synthesis_qwen3_coder | summary_only | 0 |
-| rtlopt | synthesis | qwen25-coder-32b | rtlopt_synthesis_qwen25_coder | summary_only | 0 |
-| rtlopt | synthesis | deepseek-coder-v2-lite-instruct | rtlopt_synthesis_deepseek_coder | summary_only | 0 |
-| rtlopt | equivalence | qwen36-27b | rtlopt_equivalence_qwen36_27b | summary_only | 0 |
-| rtlopt | equivalence | qwen36-35b-a3b | rtlopt_equivalence_qwen36_35b_a3b | summary_only | 0 |
-| rtlopt | equivalence | qwen3-coder-30b-a3b-instruct | rtlopt_equivalence_qwen3_coder | summary_only | 0 |
-| rtlopt | equivalence | qwen25-coder-32b | rtlopt_equivalence_qwen25_coder | summary_only | 0 |
-| rtlopt | equivalence | deepseek-coder-v2-lite-instruct | rtlopt_equivalence_deepseek_coder | summary_only | 0 |
+| verilogeval | pass1 | qwen36-27b | verilogeval_pass1_qwen36_27b | sanitized_artifact | 156 |
+| verilogeval | pass1 | qwen36-35b-a3b | verilogeval_pass1_qwen36_35b_a3b | sanitized_artifact | 156 |
+| verilogeval | pass1 | qwen3-coder-30b-a3b-instruct | verilogeval_pass1_qwen3_coder | sanitized_artifact | 156 |
+| verilogeval | pass1 | qwen25-coder-32b | verilogeval_pass1_qwen25_coder | sanitized_artifact | 156 |
+| verilogeval | pass1 | deepseek-coder-v2-lite-instruct | verilogeval_pass1_deepseek_coder | sanitized_artifact | 156 |
+| verilogeval | pass5 | qwen36-27b | verilogeval_pass5_qwen36_27b | sanitized_artifact | 780 |
+| verilogeval | pass5 | qwen36-35b-a3b | verilogeval_pass5_qwen36_35b_a3b | sanitized_artifact | 780 |
+| verilogeval | pass5 | qwen3-coder-30b-a3b-instruct | verilogeval_pass5_qwen3_coder | sanitized_artifact | 780 |
+| verilogeval | pass5 | qwen25-coder-32b | verilogeval_pass5_qwen25_coder | sanitized_artifact | 780 |
+| verilogeval | pass5 | deepseek-coder-v2-lite-instruct | verilogeval_pass5_deepseek_coder | sanitized_artifact | 780 |
+| rtllm2 | pass1 | qwen36-27b | rtllm2_pass1_qwen36_27b | sanitized_artifact | 50 |
+| rtllm2 | pass1 | qwen36-35b-a3b | rtllm2_pass1_qwen36_35b_a3b | sanitized_artifact | 50 |
+| rtllm2 | pass1 | qwen3-coder-30b-a3b-instruct | rtllm2_pass1_qwen3_coder | sanitized_artifact | 50 |
+| rtllm2 | pass1 | qwen25-coder-32b | rtllm2_pass1_qwen25_coder | sanitized_artifact | 50 |
+| rtllm2 | pass1 | deepseek-coder-v2-lite-instruct | rtllm2_pass1_deepseek_coder | sanitized_artifact | 50 |
+| protocollm | lint | qwen36-27b | protocollm_lint_qwen36_27b | sanitized_artifact | 9 |
+| protocollm | lint | qwen36-35b-a3b | protocollm_lint_qwen36_35b_a3b | sanitized_artifact | 9 |
+| protocollm | lint | qwen3-coder-30b-a3b-instruct | protocollm_lint_qwen3_coder | sanitized_artifact | 9 |
+| protocollm | lint | qwen25-coder-32b | protocollm_lint_qwen25_coder | sanitized_artifact | 9 |
+| protocollm | lint | deepseek-coder-v2-lite-instruct | protocollm_lint_deepseek_coder | sanitized_artifact | 9 |
+| rtlopt | lint | qwen36-27b | rtlopt_lint_qwen36_27b | sanitized_artifact | 40 |
+| rtlopt | lint | qwen36-35b-a3b | rtlopt_lint_qwen36_35b_a3b | sanitized_artifact | 40 |
+| rtlopt | lint | qwen3-coder-30b-a3b-instruct | rtlopt_lint_qwen3_coder | sanitized_artifact | 40 |
+| rtlopt | lint | qwen25-coder-32b | rtlopt_lint_qwen25_coder | sanitized_artifact | 40 |
+| rtlopt | lint | deepseek-coder-v2-lite-instruct | rtlopt_lint_deepseek_coder | sanitized_artifact | 40 |
+| rtlopt | synthesis | qwen36-27b | rtlopt_synthesis_qwen36_27b | sanitized_artifact | 40 |
+| rtlopt | synthesis | qwen36-35b-a3b | rtlopt_synthesis_qwen36_35b_a3b | sanitized_artifact | 40 |
+| rtlopt | synthesis | qwen3-coder-30b-a3b-instruct | rtlopt_synthesis_qwen3_coder | sanitized_artifact | 40 |
+| rtlopt | synthesis | qwen25-coder-32b | rtlopt_synthesis_qwen25_coder | sanitized_artifact | 40 |
+| rtlopt | synthesis | deepseek-coder-v2-lite-instruct | rtlopt_synthesis_deepseek_coder | sanitized_artifact | 40 |
+| rtlopt | equivalence | qwen36-27b | rtlopt_equivalence_qwen36_27b | sanitized_artifact | 40 |
+| rtlopt | equivalence | qwen36-35b-a3b | rtlopt_equivalence_qwen36_35b_a3b | sanitized_artifact | 40 |
+| rtlopt | equivalence | qwen3-coder-30b-a3b-instruct | rtlopt_equivalence_qwen3_coder | sanitized_artifact | 40 |
+| rtlopt | equivalence | qwen25-coder-32b | rtlopt_equivalence_qwen25_coder | sanitized_artifact | 40 |
+| rtlopt | equivalence | deepseek-coder-v2-lite-instruct | rtlopt_equivalence_deepseek_coder | sanitized_artifact | 40 |
 
 ## Failure Category Counts by Model
 
@@ -46,8 +46,8 @@
 |---|---:|---:|---:|---:|---:|---:|---:|
 | qwen36-27b | 64 | 140 | 9 | 708 | 183 | 8 | 3 |
 | qwen36-35b-a3b | 97 | 166 | 15 | 647 | 180 | 8 | 2 |
-| qwen3-coder-30b-a3b-instruct | 13 | 127 | 16 | 549 | 355 | 3 | 2 |
-| qwen25-coder-32b | 1 | 128 | 17 | 525 | 386 | 8 | 0 |
+| qwen3-coder-30b-a3b-instruct | 13 | 144 | 16 | 574 | 363 | 3 | 2 |
+| qwen25-coder-32b | 1 | 141 | 17 | 552 | 395 | 8 | 1 |
 | deepseek-coder-v2-lite-instruct | 6 | 148 | 5 | 586 | 362 | 6 | 2 |
 
 ## Failure Category Counts by Benchmark
@@ -55,68 +55,914 @@
 | Benchmark | code_extraction_failure | compile_failure | equiv_failure | passed | simulation_failure | synthesis_failure | timeout |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | protocollm | 3 | 14 | 0 | 28 | 0 | 0 | 0 |
-| rtllm2 | 2 | 35 | 0 | 86 | 25 | 0 | 2 |
+| rtllm2 | 2 | 65 | 0 | 138 | 42 | 0 | 3 |
 | rtlopt | 12 | 17 | 62 | 469 | 0 | 33 | 7 |
 | verilogeval | 164 | 643 | 0 | 2432 | 1441 | 0 | 0 |
 
-## Per-Task Analysis
-
-Per-task failure data is not available for this run. The summary-level baseline is still shown from registered summaries.
-
 ## Tasks Failed by All Available Models
 
-Unavailable without per-task results.
+- rtllm2/pass1/Arithmetic__Adder__adder_pipe_64bit
+- rtllm2/pass1/Arithmetic__Divider__radix2_div
+- rtllm2/pass1/Control__Counter__ring_counter
+- rtllm2/pass1/Control__Finite State Machine__sequence_detector
+- rtllm2/pass1/Memory__FIFO__asyn_fifo
+- rtllm2/pass1/Memory__Shifter__LFSR
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyeven
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyfrac
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyodd
+- rtllm2/pass1/Miscellaneous__Others__pulse_detect
+- rtllm2/pass1/Miscellaneous__Others__serial2parallel
+- rtllm2/pass1/Miscellaneous__RISC-V__alu
+- rtlopt/equivalence/adder_carry
+- rtlopt/equivalence/divider_16bit
+- rtlopt/equivalence/divider_32bit
+- rtlopt/equivalence/mux_dead
+- rtlopt/equivalence/mux_encode
+- rtlopt/equivalence/register
+- rtlopt/lint/register
+- rtlopt/synthesis/mux_encode
+- rtlopt/synthesis/register
+- verilogeval/pass1/Prob026_alwaysblock1
+- verilogeval/pass1/Prob034_dff8
+- verilogeval/pass1/Prob053_m2014_q4d
+- verilogeval/pass1/Prob057_kmap2
+- verilogeval/pass1/Prob062_bugs_mux2
+- verilogeval/pass1/Prob066_edgecapture
+- verilogeval/pass1/Prob068_countbcd
+- verilogeval/pass1/Prob070_ece241_2013_q2
+- verilogeval/pass1/Prob074_ece241_2014_q4
+- verilogeval/pass1/Prob082_lfsr32
+- verilogeval/pass1/Prob086_lfsr5
+- verilogeval/pass1/Prob089_ece241_2014_q5a
+- verilogeval/pass1/Prob093_ece241_2014_q3
+- verilogeval/pass1/Prob097_mux9to1v
+- verilogeval/pass1/Prob099_m2014_q6c
+- verilogeval/pass1/Prob104_mt2015_muxdff
+- verilogeval/pass1/Prob113_2012_q1g
+- verilogeval/pass1/Prob116_m2014_q3
+- verilogeval/pass1/Prob117_circuit9
+- verilogeval/pass1/Prob125_kmap3
+- verilogeval/pass1/Prob128_fsm_ps2
+- verilogeval/pass1/Prob131_mt2015_q4
+- verilogeval/pass1/Prob133_2014_q3fsm
+- verilogeval/pass1/Prob135_m2014_q6b
+- verilogeval/pass1/Prob136_m2014_q6
+- verilogeval/pass1/Prob137_fsm_serial
+- verilogeval/pass1/Prob139_2013_q2bfsm
+- verilogeval/pass1/Prob140_fsm_hdlc
+- verilogeval/pass1/Prob141_count_clock
+- verilogeval/pass1/Prob142_lemmings2
+- verilogeval/pass1/Prob145_circuit8
+- verilogeval/pass1/Prob146_fsm_serialdata
+- verilogeval/pass1/Prob147_circuit10
+- verilogeval/pass1/Prob149_ece241_2013_q4
+- verilogeval/pass1/Prob151_review2015_fsm
+- verilogeval/pass1/Prob152_lemmings3
+- verilogeval/pass1/Prob153_gshare
+- verilogeval/pass1/Prob154_fsm_ps2data
+- verilogeval/pass1/Prob155_lemmings4
+- verilogeval/pass1/Prob156_review2015_fancytimer
+- verilogeval/pass5/Prob034_dff8
+- verilogeval/pass5/Prob053_m2014_q4d
+- verilogeval/pass5/Prob057_kmap2
+- verilogeval/pass5/Prob062_bugs_mux2
+- verilogeval/pass5/Prob070_ece241_2013_q2
+- verilogeval/pass5/Prob074_ece241_2014_q4
+- verilogeval/pass5/Prob093_ece241_2014_q3
+- verilogeval/pass5/Prob099_m2014_q6c
+- verilogeval/pass5/Prob104_mt2015_muxdff
+- verilogeval/pass5/Prob113_2012_q1g
+- verilogeval/pass5/Prob116_m2014_q3
+- verilogeval/pass5/Prob131_mt2015_q4
+- verilogeval/pass5/Prob133_2014_q3fsm
+- verilogeval/pass5/Prob137_fsm_serial
+- verilogeval/pass5/Prob139_2013_q2bfsm
+- verilogeval/pass5/Prob140_fsm_hdlc
+- verilogeval/pass5/Prob141_count_clock
+- verilogeval/pass5/Prob145_circuit8
+- verilogeval/pass5/Prob146_fsm_serialdata
+- verilogeval/pass5/Prob147_circuit10
+- verilogeval/pass5/Prob149_ece241_2013_q4
+- verilogeval/pass5/Prob152_lemmings3
+- verilogeval/pass5/Prob153_gshare
+- verilogeval/pass5/Prob155_lemmings4
+- verilogeval/pass5/Prob156_review2015_fancytimer
 
 ## Tasks Solved by All Available Models
 
-Unavailable without per-task results.
+- rtllm2/pass1/Arithmetic__Adder__adder_bcd
+- rtllm2/pass1/Arithmetic__Comparator__comparator_3bit
+- rtllm2/pass1/Arithmetic__Multiplier__multi_16bit
+- rtllm2/pass1/Arithmetic__Other__fixed_point_substractor
+- rtllm2/pass1/Arithmetic__Substractor__sub_64bit
+- rtllm2/pass1/Control__Counter__counter_12
+- rtllm2/pass1/Control__Counter__up_down_counter
+- rtllm2/pass1/Memory__LIFO__LIFObuffer
+- rtllm2/pass1/Memory__Shifter__barrel_shifter
+- rtllm2/pass1/Miscellaneous__Others__calendar
+- rtllm2/pass1/Miscellaneous__Others__edge_detect
+- rtllm2/pass1/Miscellaneous__Others__parallel2serial
+- rtllm2/pass1/Miscellaneous__Others__synchronizer
+- rtllm2/pass1/Miscellaneous__RISC-V__RAM
+- rtllm2/pass1/Miscellaneous__RISC-V__instr_reg
+- rtllm2/pass1/Miscellaneous__RISC-V__pe
+- rtlopt/equivalence/adder_select
+- rtlopt/equivalence/comparator
+- rtlopt/equivalence/comparator_4bit
+- rtlopt/equivalence/decoder_6bit
+- rtlopt/equivalence/decoder_8bit
+- rtlopt/equivalence/mux_4to1_16bit
+- rtlopt/equivalence/mux_4to1_64bit
+- rtlopt/lint/add_sub
+- rtlopt/lint/adder
+- rtlopt/lint/adder_carry
+- rtlopt/lint/adder_select
+- rtlopt/lint/alu_8bit
+- rtlopt/lint/comparator
+- rtlopt/lint/comparator_16bit
+- rtlopt/lint/comparator_2bit
+- rtlopt/lint/comparator_4bit
+- rtlopt/lint/comparator_8bit
+- rtlopt/lint/fsm
+- rtlopt/lint/fsm_encode
+- rtlopt/lint/mac
+- rtlopt/lint/mul
+- rtlopt/lint/mul_const
+- rtlopt/lint/mul_subexpression
+- rtlopt/lint/mult_if
+- rtlopt/lint/mux_4to1_16bit
+- rtlopt/lint/mux_encode
+- rtlopt/lint/selector
+- rtlopt/lint/sub_16bit
+- rtlopt/lint/sub_32bit
+- rtlopt/lint/sub_4bit
+- rtlopt/lint/sub_8bit
+- rtlopt/synthesis/add_sub
+- rtlopt/synthesis/adder
+- rtlopt/synthesis/adder_carry
+- rtlopt/synthesis/adder_select
+- rtlopt/synthesis/addr_calcu
+- rtlopt/synthesis/alu_64bit
+- rtlopt/synthesis/alu_8bit
+- rtlopt/synthesis/calculation
+- rtlopt/synthesis/comparator
+- rtlopt/synthesis/comparator_16bit
+- rtlopt/synthesis/comparator_2bit
+- rtlopt/synthesis/comparator_4bit
+- rtlopt/synthesis/comparator_8bit
+- rtlopt/synthesis/decoder_6bit
+- rtlopt/synthesis/divider_4bit
+- rtlopt/synthesis/fsm
+- rtlopt/synthesis/fsm_encode
+- rtlopt/synthesis/mac
+- rtlopt/synthesis/mul
+- rtlopt/synthesis/mul_const
+- rtlopt/synthesis/mul_subexpression
+- rtlopt/synthesis/mult_if
+- rtlopt/synthesis/mux_4to1_16bit
+- rtlopt/synthesis/mux_large
+- rtlopt/synthesis/saturating_add
+- rtlopt/synthesis/selector
+- rtlopt/synthesis/sub_16bit
+- rtlopt/synthesis/sub_32bit
+- rtlopt/synthesis/sub_4bit
+- rtlopt/synthesis/sub_8bit
+- rtlopt/synthesis/ticket_machine
+- verilogeval/pass1/Prob001_zero
+- verilogeval/pass1/Prob002_m2014_q4i
+- verilogeval/pass1/Prob003_step_one
+- verilogeval/pass1/Prob004_vector2
+- verilogeval/pass1/Prob005_notgate
+- verilogeval/pass1/Prob007_wire
+- verilogeval/pass1/Prob008_m2014_q4h
+- verilogeval/pass1/Prob009_popcount3
+- verilogeval/pass1/Prob010_mt2015_q4a
+- verilogeval/pass1/Prob011_norgate
+- verilogeval/pass1/Prob012_xnorgate
+- verilogeval/pass1/Prob013_m2014_q4e
+- verilogeval/pass1/Prob014_andgate
+- verilogeval/pass1/Prob015_vector1
+- verilogeval/pass1/Prob017_mux2to1v
+- verilogeval/pass1/Prob018_mux256to1
+- verilogeval/pass1/Prob019_m2014_q4f
+- verilogeval/pass1/Prob020_mt2015_eq2
+- verilogeval/pass1/Prob022_mux2to1
+- verilogeval/pass1/Prob024_hadd
+- verilogeval/pass1/Prob025_reduction
+- verilogeval/pass1/Prob027_fadd
+- verilogeval/pass1/Prob029_m2014_q4g
+- verilogeval/pass1/Prob032_vector0
+- verilogeval/pass1/Prob043_vector5
+- verilogeval/pass1/Prob044_vectorgates
+- verilogeval/pass1/Prob048_m2014_q4c
+- verilogeval/pass1/Prob049_m2014_q4b
+- verilogeval/pass1/Prob051_gates4
+- verilogeval/pass1/Prob052_gates100
+- verilogeval/pass1/Prob055_conditional
+- verilogeval/pass1/Prob056_ece241_2013_q7
+- verilogeval/pass1/Prob059_wire4
+- verilogeval/pass1/Prob061_2014_q4a
+- verilogeval/pass1/Prob064_vector3
+- verilogeval/pass1/Prob065_7420
+- verilogeval/pass1/Prob067_countslow
+- verilogeval/pass1/Prob069_truthtable1
+- verilogeval/pass1/Prob072_thermostat
+- verilogeval/pass1/Prob081_7458
+- verilogeval/pass1/Prob085_shift4
+- verilogeval/pass1/Prob087_gates
+- verilogeval/pass1/Prob090_circuit1
+- verilogeval/pass1/Prob105_rotate100
+- verilogeval/pass1/Prob109_fsm1
+- verilogeval/pass1/Prob110_fsm2
+- verilogeval/pass1/Prob123_bugs_addsubz
+- verilogeval/pass1/Prob132_always_if2
+- verilogeval/pass5/Prob001_zero
+- verilogeval/pass5/Prob002_m2014_q4i
+- verilogeval/pass5/Prob003_step_one
+- verilogeval/pass5/Prob004_vector2
+- verilogeval/pass5/Prob005_notgate
+- verilogeval/pass5/Prob006_vectorr
+- verilogeval/pass5/Prob007_wire
+- verilogeval/pass5/Prob008_m2014_q4h
+- verilogeval/pass5/Prob009_popcount3
+- verilogeval/pass5/Prob010_mt2015_q4a
+- verilogeval/pass5/Prob011_norgate
+- verilogeval/pass5/Prob012_xnorgate
+- verilogeval/pass5/Prob013_m2014_q4e
+- verilogeval/pass5/Prob014_andgate
+- verilogeval/pass5/Prob015_vector1
+- verilogeval/pass5/Prob017_mux2to1v
+- verilogeval/pass5/Prob018_mux256to1
+- verilogeval/pass5/Prob019_m2014_q4f
+- verilogeval/pass5/Prob020_mt2015_eq2
+- verilogeval/pass5/Prob022_mux2to1
+- verilogeval/pass5/Prob024_hadd
+- verilogeval/pass5/Prob025_reduction
+- verilogeval/pass5/Prob027_fadd
+- verilogeval/pass5/Prob028_m2014_q4a
+- verilogeval/pass5/Prob029_m2014_q4g
+- verilogeval/pass5/Prob032_vector0
+- verilogeval/pass5/Prob033_ece241_2014_q1c
+- verilogeval/pass5/Prob038_count15
+- verilogeval/pass5/Prob042_vector4
+- verilogeval/pass5/Prob043_vector5
+- verilogeval/pass5/Prob044_vectorgates
+- verilogeval/pass5/Prob047_dff8ar
+- verilogeval/pass5/Prob048_m2014_q4c
+- verilogeval/pass5/Prob049_m2014_q4b
+- verilogeval/pass5/Prob051_gates4
+- verilogeval/pass5/Prob052_gates100
+- verilogeval/pass5/Prob055_conditional
+- verilogeval/pass5/Prob056_ece241_2013_q7
+- verilogeval/pass5/Prob059_wire4
+- verilogeval/pass5/Prob061_2014_q4a
+- verilogeval/pass5/Prob064_vector3
+- verilogeval/pass5/Prob065_7420
+- verilogeval/pass5/Prob067_countslow
+- verilogeval/pass5/Prob069_truthtable1
+- verilogeval/pass5/Prob072_thermostat
+- verilogeval/pass5/Prob075_counter_2bc
+- verilogeval/pass5/Prob076_always_case
+- verilogeval/pass5/Prob081_7458
+- verilogeval/pass5/Prob085_shift4
+- verilogeval/pass5/Prob087_gates
+- verilogeval/pass5/Prob088_ece241_2014_q5b
+- verilogeval/pass5/Prob090_circuit1
+- verilogeval/pass5/Prob105_rotate100
+- verilogeval/pass5/Prob106_always_nolatches
+- verilogeval/pass5/Prob108_rule90
+- verilogeval/pass5/Prob109_fsm1
+- verilogeval/pass5/Prob110_fsm2
+- verilogeval/pass5/Prob114_bugs_case
+- verilogeval/pass5/Prob118_history_shift
+- verilogeval/pass5/Prob123_bugs_addsubz
+- verilogeval/pass5/Prob132_always_if2
 
 ## Tasks Uniquely Solved by One Model
 
-Unavailable without per-task results.
+- protocollm/lint/uart__hard1: deepseek-coder-v2-lite-instruct
+- rtllm2/pass1/Miscellaneous__RISC-V__ROM: deepseek-coder-v2-lite-instruct
+- rtlopt/equivalence/saturating_add: deepseek-coder-v2-lite-instruct
+- verilogeval/pass1/Prob058_alwaysblock2: deepseek-coder-v2-lite-instruct
+- rtllm2/pass1/Miscellaneous__Signal generation__signal_generator: qwen25-coder-32b
+- verilogeval/pass1/Prob045_edgedetect2: qwen25-coder-32b
+- verilogeval/pass1/Prob100_fsm3comb: qwen25-coder-32b
+- verilogeval/pass5/Prob045_edgedetect2: qwen25-coder-32b
+- verilogeval/pass5/Prob089_ece241_2014_q5a: qwen25-coder-32b
+- verilogeval/pass1/Prob115_shift18: qwen3-coder-30b-a3b-instruct
+- rtllm2/pass1/Arithmetic__Accumulator__accu: qwen36-27b
+- rtllm2/pass1/Arithmetic__Adder__adder_8bit: qwen36-27b
+- rtllm2/pass1/Miscellaneous__Others__traffic_light: qwen36-27b
+- verilogeval/pass1/Prob092_gatesv100: qwen36-27b
+- verilogeval/pass1/Prob096_review2015_fsmseq: qwen36-27b
+- verilogeval/pass1/Prob120_fsm3s: qwen36-27b
+- verilogeval/pass1/Prob134_2014_q3c: qwen36-27b
+- verilogeval/pass1/Prob150_review2015_fsmonehot: qwen36-27b
+- verilogeval/pass5/Prob066_edgecapture: qwen36-27b
+- verilogeval/pass5/Prob097_mux9to1v: qwen36-27b
+- verilogeval/pass5/Prob134_2014_q3c: qwen36-27b
+- verilogeval/pass5/Prob135_m2014_q6b: qwen36-27b
+- verilogeval/pass5/Prob142_lemmings2: qwen36-27b
+- verilogeval/pass5/Prob150_review2015_fsmonehot: qwen36-27b
+- verilogeval/pass5/Prob151_review2015_fsm: qwen36-27b
+- verilogeval/pass1/Prob039_always_if: qwen36-35b-a3b
+- verilogeval/pass1/Prob084_ece241_2013_q12: qwen36-35b-a3b
+- verilogeval/pass1/Prob101_circuit4: qwen36-35b-a3b
+- verilogeval/pass1/Prob102_circuit3: qwen36-35b-a3b
+- verilogeval/pass1/Prob112_always_case2: qwen36-35b-a3b
+- verilogeval/pass1/Prob124_rule110: qwen36-35b-a3b
+- verilogeval/pass1/Prob129_ece241_2013_q8: qwen36-35b-a3b
+- verilogeval/pass5/Prob082_lfsr32: qwen36-35b-a3b
+- verilogeval/pass5/Prob112_always_case2: qwen36-35b-a3b
 
 ## Tasks Recovered by Pass@5
 
-Unavailable without per-task results.
+- Prob006_vectorr: qwen36-35b-a3b
+- Prob016_m2014_q4j: qwen36-35b-a3b
+- Prob023_vector100r: qwen36-35b-a3b
+- Prob026_alwaysblock1: deepseek-coder-v2-lite-instruct
+- Prob026_alwaysblock1: qwen36-35b-a3b
+- Prob028_m2014_q4a: qwen25-coder-32b
+- Prob030_popcount255: qwen25-coder-32b
+- Prob030_popcount255: qwen36-35b-a3b
+- Prob031_dff: qwen36-35b-a3b
+- Prob033_ece241_2014_q1c: qwen25-coder-32b
+- Prob033_ece241_2014_q1c: qwen3-coder-30b-a3b-instruct
+- Prob033_ece241_2014_q1c: qwen36-35b-a3b
+- Prob035_count1to10: deepseek-coder-v2-lite-instruct
+- Prob038_count15: qwen25-coder-32b
+- Prob039_always_if: qwen25-coder-32b
+- Prob041_dff8r: qwen36-27b
+- Prob042_vector4: qwen36-35b-a3b
+- Prob046_dff8p: deepseek-coder-v2-lite-instruct
+- Prob047_dff8ar: qwen36-27b
+- Prob054_edgedetect: deepseek-coder-v2-lite-instruct
+- Prob054_edgedetect: qwen3-coder-30b-a3b-instruct
+- Prob058_alwaysblock2: qwen36-35b-a3b
+- Prob060_m2014_q4k: deepseek-coder-v2-lite-instruct
+- Prob066_edgecapture: qwen36-27b
+- Prob068_countbcd: qwen36-27b
+- Prob068_countbcd: qwen36-35b-a3b
+- Prob071_always_casez: qwen36-27b
+- Prob071_always_casez: qwen36-35b-a3b
+- Prob075_counter_2bc: deepseek-coder-v2-lite-instruct
+- Prob076_always_case: qwen25-coder-32b
+- Prob076_always_case: qwen3-coder-30b-a3b-instruct
+- Prob076_always_case: qwen36-35b-a3b
+- Prob078_dualedge: qwen3-coder-30b-a3b-instruct
+- Prob078_dualedge: qwen36-27b
+- Prob082_lfsr32: qwen36-35b-a3b
+- Prob084_ece241_2013_q12: deepseek-coder-v2-lite-instruct
+- Prob084_ece241_2013_q12: qwen25-coder-32b
+- Prob084_ece241_2013_q12: qwen36-27b
+- Prob086_lfsr5: qwen36-27b
+- Prob086_lfsr5: qwen36-35b-a3b
+- Prob088_ece241_2014_q5b: qwen25-coder-32b
+- Prob088_ece241_2014_q5b: qwen3-coder-30b-a3b-instruct
+- Prob088_ece241_2014_q5b: qwen36-27b
+- Prob089_ece241_2014_q5a: qwen25-coder-32b
+- Prob092_gatesv100: qwen25-coder-32b
+- Prob092_gatesv100: qwen36-35b-a3b
+- Prob096_review2015_fsmseq: qwen3-coder-30b-a3b-instruct
+- Prob097_mux9to1v: qwen36-27b
+- Prob100_fsm3comb: deepseek-coder-v2-lite-instruct
+- Prob100_fsm3comb: qwen36-27b
+- Prob101_circuit4: qwen36-27b
+- Prob102_circuit3: qwen36-27b
+- Prob103_circuit2: deepseek-coder-v2-lite-instruct
+- Prob103_circuit2: qwen3-coder-30b-a3b-instruct
+- Prob106_always_nolatches: qwen3-coder-30b-a3b-instruct
+- Prob107_fsm1s: qwen36-27b
+- Prob108_rule90: qwen36-35b-a3b
+- Prob111_fsm2s: qwen3-coder-30b-a3b-instruct
+- Prob114_bugs_case: qwen25-coder-32b
+- Prob114_bugs_case: qwen3-coder-30b-a3b-instruct
+- Prob114_bugs_case: qwen36-35b-a3b
+- Prob115_shift18: qwen36-27b
+- Prob115_shift18: qwen36-35b-a3b
+- Prob117_circuit9: qwen25-coder-32b
+- Prob117_circuit9: qwen36-35b-a3b
+- Prob118_history_shift: qwen36-35b-a3b
+- Prob120_fsm3s: deepseek-coder-v2-lite-instruct
+- Prob120_fsm3s: qwen3-coder-30b-a3b-instruct
+- Prob121_2014_q3bfsm: deepseek-coder-v2-lite-instruct
+- Prob121_2014_q3bfsm: qwen36-35b-a3b
+- Prob124_rule110: qwen25-coder-32b
+- Prob124_rule110: qwen36-27b
+- Prob125_kmap3: qwen36-27b
+- Prob125_kmap3: qwen36-35b-a3b
+- Prob126_circuit6: deepseek-coder-v2-lite-instruct
+- Prob126_circuit6: qwen36-27b
+- Prob127_lemmings1: qwen36-35b-a3b
+- Prob128_fsm_ps2: qwen3-coder-30b-a3b-instruct
+- Prob128_fsm_ps2: qwen36-27b
+- Prob129_ece241_2013_q8: qwen3-coder-30b-a3b-instruct
+- Prob129_ece241_2013_q8: qwen36-27b
+- Prob130_circuit5: qwen36-27b
+- Prob135_m2014_q6b: qwen36-27b
+- Prob136_m2014_q6: qwen36-27b
+- Prob136_m2014_q6: qwen36-35b-a3b
+- Prob142_lemmings2: qwen36-27b
+- Prob143_fsm_onehot: qwen25-coder-32b
+- Prob144_conwaylife: qwen3-coder-30b-a3b-instruct
+- Prob151_review2015_fsm: qwen36-27b
+- Prob154_fsm_ps2data: qwen36-27b
+- Prob154_fsm_ps2data: qwen36-35b-a3b
 
 ## Hardest Tasks
 
-Unavailable without per-task results.
+- rtllm2/pass1/Arithmetic__Adder__adder_pipe_64bit: 5/5 models failed
+- rtllm2/pass1/Arithmetic__Divider__radix2_div: 5/5 models failed
+- rtllm2/pass1/Control__Counter__ring_counter: 5/5 models failed
+- rtllm2/pass1/Control__Finite State Machine__sequence_detector: 5/5 models failed
+- rtllm2/pass1/Memory__FIFO__asyn_fifo: 5/5 models failed
+- rtllm2/pass1/Memory__Shifter__LFSR: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyeven: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyfrac: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_divbyodd: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__pulse_detect: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__serial2parallel: 5/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__alu: 5/5 models failed
+- rtlopt/equivalence/adder_carry: 5/5 models failed
+- rtlopt/equivalence/divider_16bit: 5/5 models failed
+- rtlopt/equivalence/divider_32bit: 5/5 models failed
+- rtlopt/equivalence/mux_dead: 5/5 models failed
+- rtlopt/equivalence/mux_encode: 5/5 models failed
+- rtlopt/equivalence/register: 5/5 models failed
+- rtlopt/lint/register: 5/5 models failed
+- rtlopt/synthesis/mux_encode: 5/5 models failed
+- rtlopt/synthesis/register: 5/5 models failed
+- verilogeval/pass1/Prob026_alwaysblock1: 5/5 models failed
+- verilogeval/pass1/Prob034_dff8: 5/5 models failed
+- verilogeval/pass1/Prob053_m2014_q4d: 5/5 models failed
+- verilogeval/pass1/Prob057_kmap2: 5/5 models failed
+- verilogeval/pass1/Prob062_bugs_mux2: 5/5 models failed
+- verilogeval/pass1/Prob066_edgecapture: 5/5 models failed
+- verilogeval/pass1/Prob068_countbcd: 5/5 models failed
+- verilogeval/pass1/Prob070_ece241_2013_q2: 5/5 models failed
+- verilogeval/pass1/Prob074_ece241_2014_q4: 5/5 models failed
+- verilogeval/pass1/Prob082_lfsr32: 5/5 models failed
+- verilogeval/pass1/Prob086_lfsr5: 5/5 models failed
+- verilogeval/pass1/Prob089_ece241_2014_q5a: 5/5 models failed
+- verilogeval/pass1/Prob093_ece241_2014_q3: 5/5 models failed
+- verilogeval/pass1/Prob097_mux9to1v: 5/5 models failed
+- verilogeval/pass1/Prob099_m2014_q6c: 5/5 models failed
+- verilogeval/pass1/Prob104_mt2015_muxdff: 5/5 models failed
+- verilogeval/pass1/Prob113_2012_q1g: 5/5 models failed
+- verilogeval/pass1/Prob116_m2014_q3: 5/5 models failed
+- verilogeval/pass1/Prob117_circuit9: 5/5 models failed
+- verilogeval/pass1/Prob125_kmap3: 5/5 models failed
+- verilogeval/pass1/Prob128_fsm_ps2: 5/5 models failed
+- verilogeval/pass1/Prob131_mt2015_q4: 5/5 models failed
+- verilogeval/pass1/Prob133_2014_q3fsm: 5/5 models failed
+- verilogeval/pass1/Prob135_m2014_q6b: 5/5 models failed
+- verilogeval/pass1/Prob136_m2014_q6: 5/5 models failed
+- verilogeval/pass1/Prob137_fsm_serial: 5/5 models failed
+- verilogeval/pass1/Prob139_2013_q2bfsm: 5/5 models failed
+- verilogeval/pass1/Prob140_fsm_hdlc: 5/5 models failed
+- verilogeval/pass1/Prob141_count_clock: 5/5 models failed
+- verilogeval/pass1/Prob142_lemmings2: 5/5 models failed
+- verilogeval/pass1/Prob145_circuit8: 5/5 models failed
+- verilogeval/pass1/Prob146_fsm_serialdata: 5/5 models failed
+- verilogeval/pass1/Prob147_circuit10: 5/5 models failed
+- verilogeval/pass1/Prob149_ece241_2013_q4: 5/5 models failed
+- verilogeval/pass1/Prob151_review2015_fsm: 5/5 models failed
+- verilogeval/pass1/Prob152_lemmings3: 5/5 models failed
+- verilogeval/pass1/Prob153_gshare: 5/5 models failed
+- verilogeval/pass1/Prob154_fsm_ps2data: 5/5 models failed
+- verilogeval/pass1/Prob155_lemmings4: 5/5 models failed
+- verilogeval/pass1/Prob156_review2015_fancytimer: 5/5 models failed
+- verilogeval/pass5/Prob034_dff8: 5/5 models failed
+- verilogeval/pass5/Prob053_m2014_q4d: 5/5 models failed
+- verilogeval/pass5/Prob057_kmap2: 5/5 models failed
+- verilogeval/pass5/Prob062_bugs_mux2: 5/5 models failed
+- verilogeval/pass5/Prob070_ece241_2013_q2: 5/5 models failed
+- verilogeval/pass5/Prob074_ece241_2014_q4: 5/5 models failed
+- verilogeval/pass5/Prob093_ece241_2014_q3: 5/5 models failed
+- verilogeval/pass5/Prob099_m2014_q6c: 5/5 models failed
+- verilogeval/pass5/Prob104_mt2015_muxdff: 5/5 models failed
+- verilogeval/pass5/Prob113_2012_q1g: 5/5 models failed
+- verilogeval/pass5/Prob116_m2014_q3: 5/5 models failed
+- verilogeval/pass5/Prob131_mt2015_q4: 5/5 models failed
+- verilogeval/pass5/Prob133_2014_q3fsm: 5/5 models failed
+- verilogeval/pass5/Prob137_fsm_serial: 5/5 models failed
+- verilogeval/pass5/Prob139_2013_q2bfsm: 5/5 models failed
+- verilogeval/pass5/Prob140_fsm_hdlc: 5/5 models failed
+- verilogeval/pass5/Prob141_count_clock: 5/5 models failed
+- verilogeval/pass5/Prob145_circuit8: 5/5 models failed
+- verilogeval/pass5/Prob146_fsm_serialdata: 5/5 models failed
+- verilogeval/pass5/Prob147_circuit10: 5/5 models failed
+- verilogeval/pass5/Prob149_ece241_2013_q4: 5/5 models failed
+- verilogeval/pass5/Prob152_lemmings3: 5/5 models failed
+- verilogeval/pass5/Prob153_gshare: 5/5 models failed
+- verilogeval/pass5/Prob155_lemmings4: 5/5 models failed
+- verilogeval/pass5/Prob156_review2015_fancytimer: 5/5 models failed
+- protocollm/lint/uart__hard1: 4/5 models failed
+- rtllm2/pass1/Arithmetic__Accumulator__accu: 4/5 models failed
+- rtllm2/pass1/Arithmetic__Adder__adder_8bit: 4/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__traffic_light: 4/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__ROM: 4/5 models failed
+- rtllm2/pass1/Miscellaneous__Signal generation__signal_generator: 4/5 models failed
+- rtlopt/equivalence/saturating_add: 4/5 models failed
+- verilogeval/pass1/Prob039_always_if: 4/5 models failed
+- verilogeval/pass1/Prob045_edgedetect2: 4/5 models failed
+- verilogeval/pass1/Prob058_alwaysblock2: 4/5 models failed
+- verilogeval/pass1/Prob084_ece241_2013_q12: 4/5 models failed
+- verilogeval/pass1/Prob092_gatesv100: 4/5 models failed
+- verilogeval/pass1/Prob096_review2015_fsmseq: 4/5 models failed
+- verilogeval/pass1/Prob100_fsm3comb: 4/5 models failed
+- verilogeval/pass1/Prob101_circuit4: 4/5 models failed
+- verilogeval/pass1/Prob102_circuit3: 4/5 models failed
+- verilogeval/pass1/Prob112_always_case2: 4/5 models failed
+- verilogeval/pass1/Prob115_shift18: 4/5 models failed
+- verilogeval/pass1/Prob120_fsm3s: 4/5 models failed
+- verilogeval/pass1/Prob124_rule110: 4/5 models failed
+- verilogeval/pass1/Prob129_ece241_2013_q8: 4/5 models failed
+- verilogeval/pass1/Prob134_2014_q3c: 4/5 models failed
+- verilogeval/pass1/Prob150_review2015_fsmonehot: 4/5 models failed
+- verilogeval/pass5/Prob045_edgedetect2: 4/5 models failed
+- verilogeval/pass5/Prob066_edgecapture: 4/5 models failed
+- verilogeval/pass5/Prob082_lfsr32: 4/5 models failed
+- verilogeval/pass5/Prob089_ece241_2014_q5a: 4/5 models failed
+- verilogeval/pass5/Prob097_mux9to1v: 4/5 models failed
+- verilogeval/pass5/Prob112_always_case2: 4/5 models failed
+- verilogeval/pass5/Prob134_2014_q3c: 4/5 models failed
+- verilogeval/pass5/Prob135_m2014_q6b: 4/5 models failed
+- verilogeval/pass5/Prob142_lemmings2: 4/5 models failed
+- verilogeval/pass5/Prob150_review2015_fsmonehot: 4/5 models failed
+- verilogeval/pass5/Prob151_review2015_fsm: 4/5 models failed
+- protocollm/lint/uart__easy1: 3/5 models failed
+- rtllm2/pass1/Arithmetic__Adder__adder_16bit: 3/5 models failed
+- rtllm2/pass1/Arithmetic__Adder__adder_32bit: 3/5 models failed
+- rtllm2/pass1/Arithmetic__Comparator__comparator_4bit: 3/5 models failed
+- rtllm2/pass1/Arithmetic__Multiplier__multi_8bit: 3/5 models failed
+- rtllm2/pass1/Arithmetic__Other__float_multi: 3/5 models failed
+- rtllm2/pass1/Control__Finite State Machine__fsm: 3/5 models failed
+- rtlopt/equivalence/addr_calcu: 3/5 models failed
+- rtlopt/equivalence/calculation: 3/5 models failed
+- rtlopt/equivalence/divider_4bit: 3/5 models failed
+- rtlopt/equivalence/fsm: 3/5 models failed
+- rtlopt/equivalence/fsm_encode: 3/5 models failed
+- rtlopt/equivalence/mac: 3/5 models failed
+- rtlopt/equivalence/mux_large: 3/5 models failed
+- rtlopt/equivalence/sub_16bit: 3/5 models failed
+- rtlopt/equivalence/sub_8bit: 3/5 models failed
+- rtlopt/lint/divider_32bit: 3/5 models failed
+- verilogeval/pass1/Prob016_m2014_q4j: 3/5 models failed
+- verilogeval/pass1/Prob023_vector100r: 3/5 models failed
+- verilogeval/pass1/Prob030_popcount255: 3/5 models failed
+- verilogeval/pass1/Prob033_ece241_2014_q1c: 3/5 models failed
+- verilogeval/pass1/Prob054_edgedetect: 3/5 models failed
+- verilogeval/pass1/Prob060_m2014_q4k: 3/5 models failed
+- verilogeval/pass1/Prob063_review2015_shiftcount: 3/5 models failed
+- verilogeval/pass1/Prob071_always_casez: 3/5 models failed
+- verilogeval/pass1/Prob076_always_case: 3/5 models failed
+- verilogeval/pass1/Prob078_dualedge: 3/5 models failed
+- verilogeval/pass1/Prob088_ece241_2014_q5b: 3/5 models failed
+- verilogeval/pass1/Prob091_2012_q2b: 3/5 models failed
+- verilogeval/pass1/Prob094_gatesv: 3/5 models failed
+- verilogeval/pass1/Prob098_circuit7: 3/5 models failed
+- verilogeval/pass1/Prob103_circuit2: 3/5 models failed
+- verilogeval/pass1/Prob114_bugs_case: 3/5 models failed
+- verilogeval/pass1/Prob121_2014_q3bfsm: 3/5 models failed
+- verilogeval/pass1/Prob126_circuit6: 3/5 models failed
+- verilogeval/pass1/Prob130_circuit5: 3/5 models failed
+- verilogeval/pass1/Prob143_fsm_onehot: 3/5 models failed
+- verilogeval/pass1/Prob144_conwaylife: 3/5 models failed
+- verilogeval/pass1/Prob148_2013_q2afsm: 3/5 models failed
+- verilogeval/pass5/Prob026_alwaysblock1: 3/5 models failed
+- verilogeval/pass5/Prob039_always_if: 3/5 models failed
+- verilogeval/pass5/Prob058_alwaysblock2: 3/5 models failed
+- verilogeval/pass5/Prob063_review2015_shiftcount: 3/5 models failed
+- verilogeval/pass5/Prob068_countbcd: 3/5 models failed
+- verilogeval/pass5/Prob086_lfsr5: 3/5 models failed
+- verilogeval/pass5/Prob091_2012_q2b: 3/5 models failed
+- verilogeval/pass5/Prob094_gatesv: 3/5 models failed
+- verilogeval/pass5/Prob096_review2015_fsmseq: 3/5 models failed
+- verilogeval/pass5/Prob098_circuit7: 3/5 models failed
+- verilogeval/pass5/Prob101_circuit4: 3/5 models failed
+- verilogeval/pass5/Prob102_circuit3: 3/5 models failed
+- verilogeval/pass5/Prob117_circuit9: 3/5 models failed
+- verilogeval/pass5/Prob125_kmap3: 3/5 models failed
+- verilogeval/pass5/Prob128_fsm_ps2: 3/5 models failed
+- verilogeval/pass5/Prob136_m2014_q6: 3/5 models failed
+- verilogeval/pass5/Prob143_fsm_onehot: 3/5 models failed
+- verilogeval/pass5/Prob148_2013_q2afsm: 3/5 models failed
+- verilogeval/pass5/Prob154_fsm_ps2data: 3/5 models failed
+- protocollm/lint/i2c__easy1: 2/5 models failed
+- protocollm/lint/i2c__hard1: 2/5 models failed
+- protocollm/lint/spi__easy2: 2/5 models failed
+- rtllm2/pass1/Arithmetic__Divider__div_16bit: 2/5 models failed
+- rtllm2/pass1/Arithmetic__Multiplier__multi_pipe_4bit: 2/5 models failed
+- rtllm2/pass1/Arithmetic__Other__fixed_point_adder: 2/5 models failed
+- rtlopt/equivalence/adder: 2/5 models failed
+- rtlopt/equivalence/comparator_16bit: 2/5 models failed
+- rtlopt/equivalence/comparator_8bit: 2/5 models failed
+- rtlopt/equivalence/divider_8bit: 2/5 models failed
+- rtlopt/equivalence/gray: 2/5 models failed
+- rtlopt/equivalence/mul: 2/5 models failed
+- rtlopt/equivalence/mul_subexpression: 2/5 models failed
+- rtlopt/equivalence/mult_if: 2/5 models failed
+- rtlopt/equivalence/sub_32bit: 2/5 models failed
+- rtlopt/equivalence/sub_4bit: 2/5 models failed
+- rtlopt/equivalence/ticket_machine: 2/5 models failed
+- rtlopt/synthesis/divider_16bit: 2/5 models failed
+- rtlopt/synthesis/divider_32bit: 2/5 models failed
+- rtlopt/synthesis/gray: 2/5 models failed
+- verilogeval/pass1/Prob021_mux256to1v: 2/5 models failed
+- verilogeval/pass1/Prob031_dff: 2/5 models failed
+- verilogeval/pass1/Prob035_count1to10: 2/5 models failed
+- verilogeval/pass1/Prob036_ringer: 2/5 models failed
+- verilogeval/pass1/Prob041_dff8r: 2/5 models failed
+- verilogeval/pass1/Prob046_dff8p: 2/5 models failed
+- verilogeval/pass1/Prob073_dff16e: 2/5 models failed
+- verilogeval/pass1/Prob080_timer: 2/5 models failed
+- verilogeval/pass1/Prob095_review2015_fsmshift: 2/5 models failed
+- verilogeval/pass1/Prob107_fsm1s: 2/5 models failed
+- verilogeval/pass1/Prob111_fsm2s: 2/5 models failed
+- verilogeval/pass1/Prob122_kmap4: 2/5 models failed
+- verilogeval/pass1/Prob127_lemmings1: 2/5 models failed
+- verilogeval/pass1/Prob138_2012_q2fsm: 2/5 models failed
+- verilogeval/pass5/Prob016_m2014_q4j: 2/5 models failed
+- verilogeval/pass5/Prob021_mux256to1v: 2/5 models failed
+- verilogeval/pass5/Prob023_vector100r: 2/5 models failed
+- verilogeval/pass5/Prob036_ringer: 2/5 models failed
+- verilogeval/pass5/Prob060_m2014_q4k: 2/5 models failed
+- verilogeval/pass5/Prob073_dff16e: 2/5 models failed
+- verilogeval/pass5/Prob080_timer: 2/5 models failed
+- verilogeval/pass5/Prob092_gatesv100: 2/5 models failed
+- verilogeval/pass5/Prob095_review2015_fsmshift: 2/5 models failed
+- verilogeval/pass5/Prob100_fsm3comb: 2/5 models failed
+- verilogeval/pass5/Prob115_shift18: 2/5 models failed
+- verilogeval/pass5/Prob120_fsm3s: 2/5 models failed
+- verilogeval/pass5/Prob122_kmap4: 2/5 models failed
+- verilogeval/pass5/Prob124_rule110: 2/5 models failed
+- verilogeval/pass5/Prob129_ece241_2013_q8: 2/5 models failed
+- verilogeval/pass5/Prob130_circuit5: 2/5 models failed
+- verilogeval/pass5/Prob138_2012_q2fsm: 2/5 models failed
+- verilogeval/pass5/Prob144_conwaylife: 2/5 models failed
+- protocollm/lint/axi__easy1: 1/5 models failed
+- protocollm/lint/spi__easy3: 1/5 models failed
+- protocollm/lint/spi__easy4: 1/5 models failed
+- protocollm/lint/spi__easy5: 1/5 models failed
+- rtllm2/pass1/Arithmetic__Multiplier__multi_booth_8bit: 1/5 models failed
+- rtllm2/pass1/Arithmetic__Multiplier__multi_pipe_8bit: 1/5 models failed
+- rtllm2/pass1/Control__Counter__JC_counter: 1/5 models failed
+- rtllm2/pass1/Memory__Shifter__right_shifter: 1/5 models failed
+- rtllm2/pass1/Miscellaneous__Frequency divider__freq_div: 1/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__width_8to16: 1/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__clkgenerator: 1/5 models failed
+- rtllm2/pass1/Miscellaneous__Signal generation__square_wave: 1/5 models failed
+- rtlopt/equivalence/add_sub: 1/5 models failed
+- rtlopt/equivalence/alu_64bit: 1/5 models failed
+- rtlopt/equivalence/alu_8bit: 1/5 models failed
+- rtlopt/equivalence/comparator_2bit: 1/5 models failed
+- rtlopt/equivalence/mul_const: 1/5 models failed
+- rtlopt/equivalence/selector: 1/5 models failed
+- rtlopt/lint/addr_calcu: 1/5 models failed
+- rtlopt/lint/alu_64bit: 1/5 models failed
+- rtlopt/lint/calculation: 1/5 models failed
+- rtlopt/lint/decoder_6bit: 1/5 models failed
+- rtlopt/lint/decoder_8bit: 1/5 models failed
+- rtlopt/lint/divider_16bit: 1/5 models failed
+- rtlopt/lint/divider_4bit: 1/5 models failed
+- rtlopt/lint/divider_8bit: 1/5 models failed
+- rtlopt/lint/gray: 1/5 models failed
+- rtlopt/lint/mux_4to1_64bit: 1/5 models failed
+- rtlopt/lint/mux_dead: 1/5 models failed
+- rtlopt/lint/mux_large: 1/5 models failed
+- rtlopt/lint/saturating_add: 1/5 models failed
+- rtlopt/lint/ticket_machine: 1/5 models failed
+- rtlopt/synthesis/decoder_8bit: 1/5 models failed
+- rtlopt/synthesis/divider_8bit: 1/5 models failed
+- rtlopt/synthesis/mux_4to1_64bit: 1/5 models failed
+- rtlopt/synthesis/mux_dead: 1/5 models failed
+- verilogeval/pass1/Prob006_vectorr: 1/5 models failed
+- verilogeval/pass1/Prob028_m2014_q4a: 1/5 models failed
+- verilogeval/pass1/Prob037_review2015_count1k: 1/5 models failed
+- verilogeval/pass1/Prob038_count15: 1/5 models failed
+- verilogeval/pass1/Prob040_count10: 1/5 models failed
+- verilogeval/pass1/Prob042_vector4: 1/5 models failed
+- verilogeval/pass1/Prob047_dff8ar: 1/5 models failed
+- verilogeval/pass1/Prob050_kmap1: 1/5 models failed
+- verilogeval/pass1/Prob075_counter_2bc: 1/5 models failed
+- verilogeval/pass1/Prob077_wire_decl: 1/5 models failed
+- verilogeval/pass1/Prob079_fsm3onehot: 1/5 models failed
+- verilogeval/pass1/Prob083_mt2015_q4b: 1/5 models failed
+- verilogeval/pass1/Prob106_always_nolatches: 1/5 models failed
+- verilogeval/pass1/Prob108_rule90: 1/5 models failed
+- verilogeval/pass1/Prob118_history_shift: 1/5 models failed
+- verilogeval/pass1/Prob119_fsm3: 1/5 models failed
+- verilogeval/pass5/Prob030_popcount255: 1/5 models failed
+- verilogeval/pass5/Prob031_dff: 1/5 models failed
+- verilogeval/pass5/Prob035_count1to10: 1/5 models failed
+- verilogeval/pass5/Prob037_review2015_count1k: 1/5 models failed
+- verilogeval/pass5/Prob040_count10: 1/5 models failed
+- verilogeval/pass5/Prob041_dff8r: 1/5 models failed
+- verilogeval/pass5/Prob046_dff8p: 1/5 models failed
+- verilogeval/pass5/Prob050_kmap1: 1/5 models failed
+- verilogeval/pass5/Prob054_edgedetect: 1/5 models failed
+- verilogeval/pass5/Prob071_always_casez: 1/5 models failed
+- verilogeval/pass5/Prob077_wire_decl: 1/5 models failed
+- verilogeval/pass5/Prob078_dualedge: 1/5 models failed
+- verilogeval/pass5/Prob079_fsm3onehot: 1/5 models failed
+- verilogeval/pass5/Prob083_mt2015_q4b: 1/5 models failed
+- verilogeval/pass5/Prob084_ece241_2013_q12: 1/5 models failed
+- verilogeval/pass5/Prob103_circuit2: 1/5 models failed
+- verilogeval/pass5/Prob107_fsm1s: 1/5 models failed
+- verilogeval/pass5/Prob111_fsm2s: 1/5 models failed
+- verilogeval/pass5/Prob119_fsm3: 1/5 models failed
+- verilogeval/pass5/Prob121_2014_q3bfsm: 1/5 models failed
+- verilogeval/pass5/Prob126_circuit6: 1/5 models failed
+- verilogeval/pass5/Prob127_lemmings1: 1/5 models failed
+- rtllm2/pass1/Arithmetic__Adder__adder_bcd: 0/5 models failed
+- rtllm2/pass1/Arithmetic__Comparator__comparator_3bit: 0/5 models failed
+- rtllm2/pass1/Arithmetic__Multiplier__multi_16bit: 0/5 models failed
+- rtllm2/pass1/Arithmetic__Other__fixed_point_substractor: 0/5 models failed
+- rtllm2/pass1/Arithmetic__Substractor__sub_64bit: 0/5 models failed
+- rtllm2/pass1/Control__Counter__counter_12: 0/5 models failed
+- rtllm2/pass1/Control__Counter__up_down_counter: 0/5 models failed
+- rtllm2/pass1/Memory__LIFO__LIFObuffer: 0/5 models failed
+- rtllm2/pass1/Memory__Shifter__barrel_shifter: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__calendar: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__edge_detect: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__parallel2serial: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__Others__synchronizer: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__RAM: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__instr_reg: 0/5 models failed
+- rtllm2/pass1/Miscellaneous__RISC-V__pe: 0/5 models failed
+- rtlopt/equivalence/adder_select: 0/5 models failed
+- rtlopt/equivalence/comparator: 0/5 models failed
+- rtlopt/equivalence/comparator_4bit: 0/5 models failed
+- rtlopt/equivalence/decoder_6bit: 0/5 models failed
+- rtlopt/equivalence/decoder_8bit: 0/5 models failed
+- rtlopt/equivalence/mux_4to1_16bit: 0/5 models failed
+- rtlopt/equivalence/mux_4to1_64bit: 0/5 models failed
+- rtlopt/lint/add_sub: 0/5 models failed
+- rtlopt/lint/adder: 0/5 models failed
+- rtlopt/lint/adder_carry: 0/5 models failed
+- rtlopt/lint/adder_select: 0/5 models failed
+- rtlopt/lint/alu_8bit: 0/5 models failed
+- rtlopt/lint/comparator: 0/5 models failed
+- rtlopt/lint/comparator_16bit: 0/5 models failed
+- rtlopt/lint/comparator_2bit: 0/5 models failed
+- rtlopt/lint/comparator_4bit: 0/5 models failed
+- rtlopt/lint/comparator_8bit: 0/5 models failed
+- rtlopt/lint/fsm: 0/5 models failed
+- rtlopt/lint/fsm_encode: 0/5 models failed
+- rtlopt/lint/mac: 0/5 models failed
+- rtlopt/lint/mul: 0/5 models failed
+- rtlopt/lint/mul_const: 0/5 models failed
+- rtlopt/lint/mul_subexpression: 0/5 models failed
+- rtlopt/lint/mult_if: 0/5 models failed
+- rtlopt/lint/mux_4to1_16bit: 0/5 models failed
+- rtlopt/lint/mux_encode: 0/5 models failed
+- rtlopt/lint/selector: 0/5 models failed
+- rtlopt/lint/sub_16bit: 0/5 models failed
+- rtlopt/lint/sub_32bit: 0/5 models failed
+- rtlopt/lint/sub_4bit: 0/5 models failed
+- rtlopt/lint/sub_8bit: 0/5 models failed
+- rtlopt/synthesis/add_sub: 0/5 models failed
+- rtlopt/synthesis/adder: 0/5 models failed
+- rtlopt/synthesis/adder_carry: 0/5 models failed
+- rtlopt/synthesis/adder_select: 0/5 models failed
+- rtlopt/synthesis/addr_calcu: 0/5 models failed
+- rtlopt/synthesis/alu_64bit: 0/5 models failed
+- rtlopt/synthesis/alu_8bit: 0/5 models failed
+- rtlopt/synthesis/calculation: 0/5 models failed
+- rtlopt/synthesis/comparator: 0/5 models failed
+- rtlopt/synthesis/comparator_16bit: 0/5 models failed
+- rtlopt/synthesis/comparator_2bit: 0/5 models failed
+- rtlopt/synthesis/comparator_4bit: 0/5 models failed
+- rtlopt/synthesis/comparator_8bit: 0/5 models failed
+- rtlopt/synthesis/decoder_6bit: 0/5 models failed
+- rtlopt/synthesis/divider_4bit: 0/5 models failed
+- rtlopt/synthesis/fsm: 0/5 models failed
+- rtlopt/synthesis/fsm_encode: 0/5 models failed
+- rtlopt/synthesis/mac: 0/5 models failed
+- rtlopt/synthesis/mul: 0/5 models failed
+- rtlopt/synthesis/mul_const: 0/5 models failed
+- rtlopt/synthesis/mul_subexpression: 0/5 models failed
+- rtlopt/synthesis/mult_if: 0/5 models failed
+- rtlopt/synthesis/mux_4to1_16bit: 0/5 models failed
+- rtlopt/synthesis/mux_large: 0/5 models failed
+- rtlopt/synthesis/saturating_add: 0/5 models failed
+- rtlopt/synthesis/selector: 0/5 models failed
+- rtlopt/synthesis/sub_16bit: 0/5 models failed
+- rtlopt/synthesis/sub_32bit: 0/5 models failed
+- rtlopt/synthesis/sub_4bit: 0/5 models failed
+- rtlopt/synthesis/sub_8bit: 0/5 models failed
+- rtlopt/synthesis/ticket_machine: 0/5 models failed
+- verilogeval/pass1/Prob001_zero: 0/5 models failed
+- verilogeval/pass1/Prob002_m2014_q4i: 0/5 models failed
+- verilogeval/pass1/Prob003_step_one: 0/5 models failed
+- verilogeval/pass1/Prob004_vector2: 0/5 models failed
+- verilogeval/pass1/Prob005_notgate: 0/5 models failed
+- verilogeval/pass1/Prob007_wire: 0/5 models failed
+- verilogeval/pass1/Prob008_m2014_q4h: 0/5 models failed
+- verilogeval/pass1/Prob009_popcount3: 0/5 models failed
+- verilogeval/pass1/Prob010_mt2015_q4a: 0/5 models failed
+- verilogeval/pass1/Prob011_norgate: 0/5 models failed
+- verilogeval/pass1/Prob012_xnorgate: 0/5 models failed
+- verilogeval/pass1/Prob013_m2014_q4e: 0/5 models failed
+- verilogeval/pass1/Prob014_andgate: 0/5 models failed
+- verilogeval/pass1/Prob015_vector1: 0/5 models failed
+- verilogeval/pass1/Prob017_mux2to1v: 0/5 models failed
+- verilogeval/pass1/Prob018_mux256to1: 0/5 models failed
+- verilogeval/pass1/Prob019_m2014_q4f: 0/5 models failed
+- verilogeval/pass1/Prob020_mt2015_eq2: 0/5 models failed
+- verilogeval/pass1/Prob022_mux2to1: 0/5 models failed
+- verilogeval/pass1/Prob024_hadd: 0/5 models failed
+- verilogeval/pass1/Prob025_reduction: 0/5 models failed
+- verilogeval/pass1/Prob027_fadd: 0/5 models failed
+- verilogeval/pass1/Prob029_m2014_q4g: 0/5 models failed
+- verilogeval/pass1/Prob032_vector0: 0/5 models failed
+- verilogeval/pass1/Prob043_vector5: 0/5 models failed
+- verilogeval/pass1/Prob044_vectorgates: 0/5 models failed
+- verilogeval/pass1/Prob048_m2014_q4c: 0/5 models failed
+- verilogeval/pass1/Prob049_m2014_q4b: 0/5 models failed
+- verilogeval/pass1/Prob051_gates4: 0/5 models failed
+- verilogeval/pass1/Prob052_gates100: 0/5 models failed
+- verilogeval/pass1/Prob055_conditional: 0/5 models failed
+- verilogeval/pass1/Prob056_ece241_2013_q7: 0/5 models failed
+- verilogeval/pass1/Prob059_wire4: 0/5 models failed
+- verilogeval/pass1/Prob061_2014_q4a: 0/5 models failed
+- verilogeval/pass1/Prob064_vector3: 0/5 models failed
+- verilogeval/pass1/Prob065_7420: 0/5 models failed
+- verilogeval/pass1/Prob067_countslow: 0/5 models failed
+- verilogeval/pass1/Prob069_truthtable1: 0/5 models failed
+- verilogeval/pass1/Prob072_thermostat: 0/5 models failed
+- verilogeval/pass1/Prob081_7458: 0/5 models failed
+- verilogeval/pass1/Prob085_shift4: 0/5 models failed
+- verilogeval/pass1/Prob087_gates: 0/5 models failed
+- verilogeval/pass1/Prob090_circuit1: 0/5 models failed
+- verilogeval/pass1/Prob105_rotate100: 0/5 models failed
+- verilogeval/pass1/Prob109_fsm1: 0/5 models failed
+- verilogeval/pass1/Prob110_fsm2: 0/5 models failed
+- verilogeval/pass1/Prob123_bugs_addsubz: 0/5 models failed
+- verilogeval/pass1/Prob132_always_if2: 0/5 models failed
+- verilogeval/pass5/Prob001_zero: 0/5 models failed
+- verilogeval/pass5/Prob002_m2014_q4i: 0/5 models failed
+- verilogeval/pass5/Prob003_step_one: 0/5 models failed
+- verilogeval/pass5/Prob004_vector2: 0/5 models failed
+- verilogeval/pass5/Prob005_notgate: 0/5 models failed
+- verilogeval/pass5/Prob006_vectorr: 0/5 models failed
+- verilogeval/pass5/Prob007_wire: 0/5 models failed
+- verilogeval/pass5/Prob008_m2014_q4h: 0/5 models failed
+- verilogeval/pass5/Prob009_popcount3: 0/5 models failed
+- verilogeval/pass5/Prob010_mt2015_q4a: 0/5 models failed
+- verilogeval/pass5/Prob011_norgate: 0/5 models failed
+- verilogeval/pass5/Prob012_xnorgate: 0/5 models failed
+- verilogeval/pass5/Prob013_m2014_q4e: 0/5 models failed
+- verilogeval/pass5/Prob014_andgate: 0/5 models failed
+- verilogeval/pass5/Prob015_vector1: 0/5 models failed
+- verilogeval/pass5/Prob017_mux2to1v: 0/5 models failed
+- verilogeval/pass5/Prob018_mux256to1: 0/5 models failed
+- verilogeval/pass5/Prob019_m2014_q4f: 0/5 models failed
+- verilogeval/pass5/Prob020_mt2015_eq2: 0/5 models failed
+- verilogeval/pass5/Prob022_mux2to1: 0/5 models failed
+- verilogeval/pass5/Prob024_hadd: 0/5 models failed
+- verilogeval/pass5/Prob025_reduction: 0/5 models failed
+- verilogeval/pass5/Prob027_fadd: 0/5 models failed
+- verilogeval/pass5/Prob028_m2014_q4a: 0/5 models failed
+- verilogeval/pass5/Prob029_m2014_q4g: 0/5 models failed
+- verilogeval/pass5/Prob032_vector0: 0/5 models failed
+- verilogeval/pass5/Prob033_ece241_2014_q1c: 0/5 models failed
+- verilogeval/pass5/Prob038_count15: 0/5 models failed
+- verilogeval/pass5/Prob042_vector4: 0/5 models failed
+- verilogeval/pass5/Prob043_vector5: 0/5 models failed
+- verilogeval/pass5/Prob044_vectorgates: 0/5 models failed
+- verilogeval/pass5/Prob047_dff8ar: 0/5 models failed
+- verilogeval/pass5/Prob048_m2014_q4c: 0/5 models failed
+- verilogeval/pass5/Prob049_m2014_q4b: 0/5 models failed
+- verilogeval/pass5/Prob051_gates4: 0/5 models failed
+- verilogeval/pass5/Prob052_gates100: 0/5 models failed
+- verilogeval/pass5/Prob055_conditional: 0/5 models failed
+- verilogeval/pass5/Prob056_ece241_2013_q7: 0/5 models failed
+- verilogeval/pass5/Prob059_wire4: 0/5 models failed
+- verilogeval/pass5/Prob061_2014_q4a: 0/5 models failed
+- verilogeval/pass5/Prob064_vector3: 0/5 models failed
+- verilogeval/pass5/Prob065_7420: 0/5 models failed
+- verilogeval/pass5/Prob067_countslow: 0/5 models failed
+- verilogeval/pass5/Prob069_truthtable1: 0/5 models failed
+- verilogeval/pass5/Prob072_thermostat: 0/5 models failed
+- verilogeval/pass5/Prob075_counter_2bc: 0/5 models failed
+- verilogeval/pass5/Prob076_always_case: 0/5 models failed
+- verilogeval/pass5/Prob081_7458: 0/5 models failed
+- verilogeval/pass5/Prob085_shift4: 0/5 models failed
+- verilogeval/pass5/Prob087_gates: 0/5 models failed
+- verilogeval/pass5/Prob088_ece241_2014_q5b: 0/5 models failed
+- verilogeval/pass5/Prob090_circuit1: 0/5 models failed
+- verilogeval/pass5/Prob105_rotate100: 0/5 models failed
+- verilogeval/pass5/Prob106_always_nolatches: 0/5 models failed
+- verilogeval/pass5/Prob108_rule90: 0/5 models failed
+- verilogeval/pass5/Prob109_fsm1: 0/5 models failed
+- verilogeval/pass5/Prob110_fsm2: 0/5 models failed
+- verilogeval/pass5/Prob114_bugs_case: 0/5 models failed
+- verilogeval/pass5/Prob118_history_shift: 0/5 models failed
+- verilogeval/pass5/Prob123_bugs_addsubz: 0/5 models failed
+- verilogeval/pass5/Prob132_always_if2: 0/5 models failed
 
 ## Missing Data Warnings
 
-- verilogeval_pass1_qwen36_27b: per-task results unavailable; using summary fallback
-- verilogeval_pass1_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- verilogeval_pass1_qwen3_coder: per-task results unavailable; using summary fallback
-- verilogeval_pass1_qwen25_coder: per-task results unavailable; using summary fallback
-- verilogeval_pass1_deepseek_coder: per-task results unavailable; using summary fallback
-- verilogeval_pass5_qwen36_27b: per-task results unavailable; using summary fallback
-- verilogeval_pass5_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- verilogeval_pass5_qwen3_coder: per-task results unavailable; using summary fallback
-- verilogeval_pass5_qwen25_coder: per-task results unavailable; using summary fallback
-- verilogeval_pass5_deepseek_coder: per-task results unavailable; using summary fallback
-- rtllm2_pass1_qwen36_27b: per-task results unavailable; using summary fallback
-- rtllm2_pass1_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- rtllm2_pass1_qwen3_coder: per-task results unavailable; using summary fallback
-- rtllm2_pass1_qwen25_coder: per-task results unavailable; using summary fallback
-- rtllm2_pass1_deepseek_coder: per-task results unavailable; using summary fallback
-- protocollm_lint_qwen36_27b: per-task results unavailable; using summary fallback
-- protocollm_lint_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- protocollm_lint_qwen3_coder: per-task results unavailable; using summary fallback
-- protocollm_lint_qwen25_coder: per-task results unavailable; using summary fallback
-- protocollm_lint_deepseek_coder: per-task results unavailable; using summary fallback
-- rtlopt_lint_qwen36_27b: per-task results unavailable; using summary fallback
-- rtlopt_lint_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- rtlopt_lint_qwen3_coder: per-task results unavailable; using summary fallback
-- rtlopt_lint_qwen25_coder: per-task results unavailable; using summary fallback
-- rtlopt_lint_deepseek_coder: per-task results unavailable; using summary fallback
-- rtlopt_synthesis_qwen36_27b: per-task results unavailable; using summary fallback
-- rtlopt_synthesis_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- rtlopt_synthesis_qwen3_coder: per-task results unavailable; using summary fallback
-- rtlopt_synthesis_qwen25_coder: per-task results unavailable; using summary fallback
-- rtlopt_synthesis_deepseek_coder: per-task results unavailable; using summary fallback
-- rtlopt_equivalence_qwen36_27b: per-task results unavailable; using summary fallback
-- rtlopt_equivalence_qwen36_35b_a3b: per-task results unavailable; using summary fallback
-- rtlopt_equivalence_qwen3_coder: per-task results unavailable; using summary fallback
-- rtlopt_equivalence_qwen25_coder: per-task results unavailable; using summary fallback
-- rtlopt_equivalence_deepseek_coder: per-task results unavailable; using summary fallback
+None.
