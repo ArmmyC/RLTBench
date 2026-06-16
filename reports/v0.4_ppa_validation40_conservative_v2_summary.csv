@@ -1,0 +1,2 @@
+benchmark,model,prompt_profile,scoring_mode,samples,valid_scores,invalid_scores,extraction_pass_count,compile_pass_count,synth_pass_count,equiv_pass_count,timing_pass_count,mean_valid_score,median_valid_score,mean_all_sample_score,failure_categories
+rtlopt,qwen36-27b,conservative_area_v2,area_only,40,30,10,40,37,37,30,0,1.1252232751299434,1.0,0.8439174563474575,"{""compile_failure"": 3, ""equiv_failure"": 7, ""passed"": 30}"
