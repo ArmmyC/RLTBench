@@ -414,10 +414,14 @@ def merge_rows(
                     synth_pass=evaluation.synth_pass if candidate_available else False,
                     timing_status=evaluation.timing_status,
                     area_metric_available=(
-                        evaluation.reference_area is not None and evaluation.generated_area is not None
+                        candidate_available
+                        and evaluation.reference_area is not None
+                        and evaluation.generated_area is not None
                     ),
                     activity_metric_available=(
-                        evaluation.reference_activity is not None and evaluation.generated_activity is not None
+                        candidate_available
+                        and evaluation.reference_activity is not None
+                        and evaluation.generated_activity is not None
                     ),
                     reference_area=evaluation.reference_area,
                     generated_area=evaluation.generated_area if candidate_available else None,

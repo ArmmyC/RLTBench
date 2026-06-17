@@ -208,6 +208,69 @@ def test_request_failures_are_sanitized_rows() -> None:
     rows[0].sanitized_dict()
 
 
+def test_missing_current_candidate_cannot_inherit_stale_metrics() -> None:
+    task = tasks()[0]
+    config = baseline.EndpointConfig(
+        base_url="http://127.0.0.1:8000/v1",
+        credential="local-vllm-no-auth",
+        model="qwen36-27b",
+        timeout_seconds=1.0,
+    )
+    generation = baseline.GenerationRecord(
+        task_id=task.task_id,
+        sample_id=1,
+        generation_status="completed",
+        extraction_status="failed",
+        candidate_file_available=False,
+        failure_category="empty_response",
+        notes="empty response",
+    )
+    stale_evaluation = baseline.CandidateEvaluationRow(
+        task_id=task.task_id,
+        candidate_id="sample_01",
+        final_pass=True,
+        candidate_file_available=True,
+        compile_pass=True,
+        correctness_pass=True,
+        synth_pass=True,
+        timing_status="not_required",
+        reference_area=15.0,
+        generated_area=12.0,
+        area_unit="generic_cells",
+        reference_activity=34.0,
+        generated_activity=30.0,
+        activity_metric="total_signal_toggles",
+        area_score=1.25,
+        activity_score=1.13,
+        score=1.19,
+        score_status="valid",
+        failure_category="passed",
+        toolchain_id="iverilog-vcd-yosys-generic",
+        workload_id="ap_001_idle_counter_default",
+        notes="candidate validated",
+    )
+
+    result = baseline.merge_rows(
+        tasks=[task],
+        endpoint=config,
+        prompt_profile="neutral_baseline",
+        temperature=0.0,
+        top_p=1.0,
+        max_tokens=4096,
+        samples=1,
+        generation_records={(task.task_id, 1): generation},
+        evaluation_rows={(task.task_id, 1): stale_evaluation},
+    )[0]
+
+    assert result.candidate_file_available is False
+    assert result.area_metric_available is False
+    assert result.activity_metric_available is False
+    assert result.generated_area is None
+    assert result.generated_activity is None
+    assert result.score is None
+    assert result.failure_category == "empty_response"
+
+
 def test_models_preflight_is_not_required_by_default(monkeypatch) -> None:
     monkeypatch.setattr(sys, "argv", ["run_rfid_apbench_3sample_baseline.py"])
 
