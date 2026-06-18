@@ -153,8 +153,14 @@ class ModelSmokeRow:
         return {key: "" if data[key] is None else str(data[key]) for key in REPORT_FIELDS}
 
 
-def load_endpoint_config(env: Mapping[str, str] | None = None) -> EndpointConfig:
-    env = env or os.environ
+def load_endpoint_config(
+    env: Mapping[str, str] | None = None,
+    env_file: Path | None = None,
+) -> EndpointConfig:
+    if env is None:
+        env = {**load_local_env_file(env_file or REPO_ROOT / ".env"), **os.environ}
+    elif env_file is not None:
+        env = {**load_local_env_file(env_file), **env}
     timeout = _float_env(env.get("QWEN_TIMEOUT") or env.get("OPENAI_TIMEOUT"), 120.0)
     return EndpointConfig(
         base_url=_first_nonempty(env.get("QWEN_BASE_URL"), env.get("OPENAI_BASE_URL")),
@@ -162,6 +168,29 @@ def load_endpoint_config(env: Mapping[str, str] | None = None) -> EndpointConfig
         model=_first_nonempty(env.get("QWEN_MODEL"), env.get("OPENAI_MODEL")) or DEFAULT_MODEL,
         timeout_seconds=timeout,
     )
+
+
+def load_local_env_file(path: Path) -> dict[str, str]:
+    if not path.is_file():
+        return {}
+    values: dict[str, str] = {}
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        if not key:
+            continue
+        values[key] = _strip_env_value(value)
+    return values
+
+
+def _strip_env_value(value: str) -> str:
+    stripped = value.strip()
+    if len(stripped) >= 2 and stripped[0] == stripped[-1] and stripped[0] in {"'", '"'}:
+        return stripped[1:-1]
+    return stripped
 
 
 def sanitize_endpoint(base_url: str | None) -> str:

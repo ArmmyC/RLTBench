@@ -34,6 +34,57 @@ def test_endpoint_config_defaults_to_no_secret_payload() -> None:
     assert config.missing_labels == ("credential",)
 
 
+def test_endpoint_config_can_load_local_env_file(tmp_path: Path) -> None:
+    env_file = tmp_path / ".env"
+    env_file.write_text(
+        "\n".join(
+            [
+                "# local endpoint config",
+                'QWEN_BASE_URL="http://127.0.0.1:8000/v1"',
+                "QWEN_API_KEY=EMPTY",
+                "QWEN_MODEL=qwen36-27b",
+                "QWEN_TIMEOUT=2.5",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    config = model_smoke.load_endpoint_config({}, env_file=env_file)
+
+    assert config.available is True
+    assert config.sanitized_endpoint == "http://127.0.0.1:8000/v1"
+    assert config.credential == "EMPTY"
+    assert config.model == "qwen36-27b"
+    assert config.timeout_seconds == 2.5
+
+
+def test_explicit_env_overrides_local_env_file(tmp_path: Path) -> None:
+    env_file = tmp_path / ".env"
+    env_file.write_text(
+        "\n".join(
+            [
+                "QWEN_BASE_URL=http://127.0.0.1:8000/v1",
+                "QWEN_API_KEY=EMPTY",
+                "QWEN_MODEL=qwen36-27b",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+    config = model_smoke.load_endpoint_config(
+        {
+            "QWEN_BASE_URL": "https://override.example.test/v1",
+            "QWEN_API_KEY": "override-key",
+            "QWEN_MODEL": "override-model",
+        },
+        env_file=env_file,
+    )
+
+    assert config.sanitized_endpoint == "https://override.example.test/v1"
+    assert config.credential == "override-key"
+    assert config.model == "override-model"
+
+
 def test_candidate_id_is_filesystem_safe() -> None:
     assert model_smoke.make_candidate_id("qwen/36 27b:a3b") == "qwen_36_27b_a3b"
 
